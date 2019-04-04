@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7fda23e-08c2-4987-a06f-68a42c8d97ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/MyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/MyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/MyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/Adapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,12 +54,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/MyAdapter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/Adapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+            <state relative-caret-position="68">
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="e#514#515#0" expanded="true" />
                 <element signature="e#528#529#0" expanded="true" />
               </folding>
@@ -137,6 +134,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/MyAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/Adapter.java" />
       </list>
     </option>
   </component>
@@ -313,7 +311,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554383419263" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554383647750" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -387,12 +385,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554380625844</updated>
-      <workItem from="1554380636750" duration="2740000" />
+      <workItem from="1554380636750" duration="2965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2740000" />
+    <option name="totallyTimeSpent" value="2965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -513,12 +511,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/MyAdapter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="e#514#515#0" expanded="true" />
             <element signature="e#528#529#0" expanded="true" />
           </folding>
