@@ -15,6 +15,6 @@ public class TestFigure2 implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        FiguresJoe.figureScript1(driverManager.getCurrentDriver());
+        FiguresJoe.figureScript2(driverManager.getCurrentDriver());
     }
 }
