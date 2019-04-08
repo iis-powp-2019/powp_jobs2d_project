@@ -10,12 +10,15 @@ public class SelectTestFigureOptionListener implements ActionListener {
 
     private DriverManager driverManager;
 
+
     public SelectTestFigureOptionListener(DriverManager driverManager) {
         this.driverManager = driverManager;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        FiguresJoe.figureScript1(driverManager.getCurrentDriver());
+         FiguresJoe.figureScript1(driverManager.getCurrentDriver());
+
     }
 }
