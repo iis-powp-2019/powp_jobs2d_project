@@ -91,6 +91,7 @@ public class TestJobs2dPatterns {
 				setupLogger(app);
 
 				app.setVisibility(true);
+
 			}
 		});
 	}
