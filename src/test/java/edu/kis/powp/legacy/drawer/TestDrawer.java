@@ -23,10 +23,5 @@ public class TestDrawer {
         line.setStartCoordinates(-100, -60);
         line.setEndCoordinates(60, 130);
         controller.drawLine(line);
-
-        line = LineFactory.getBasicLine();
-        line.setStartCoordinates(100, 0);
-        line.setEndCoordinates(50, 130);
-        controller.drawLine(line);
     }
 }
