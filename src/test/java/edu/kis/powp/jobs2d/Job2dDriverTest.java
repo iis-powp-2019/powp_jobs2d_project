@@ -15,6 +15,7 @@ public class Job2dDriverTest {
 	 * Driver test.
 	 */
 	public static void main(String[] args) {
+
 		FiguresJoe.figureScript1(driver);
 	}
 
@@ -22,11 +23,13 @@ public class Job2dDriverTest {
 
 		@Override
 		public void operateTo(int x, int y) {
+
 			System.out.println("Driver operateTo action...");
 		}
 
 		@Override
 		public void setPosition(int x, int y) {
+
 			System.out.println("Driver setPosition action...");
 		}
 	};
