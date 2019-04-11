@@ -9,6 +9,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.Adapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
@@ -21,12 +22,13 @@ public class TestJobs2dPatterns {
 	/**
 	 * Setup test concerning preset figures in context.
 	 * 
-	 * @param application Application context.
+	 * @param application
+	 *            Application context.
 	 */
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
-		
+
 		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
 				DriverFeature.getDriverManager());
 
@@ -37,7 +39,8 @@ public class TestJobs2dPatterns {
 	/**
 	 * Setup driver manager, and set default driver for application.
 	 * 
-	 * @param application Application context.
+	 * @param application
+	 *            Application context.
 	 */
 	private static void setupDrivers(Application application) {
 		Job2dDriver loggerDriver = new LoggerDriver();
@@ -47,13 +50,17 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new Adapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
+		Job2dDriver specialAdapter = new LineDrawerAdapter();
+		DriverFeature.addDriver("Special Simulator", specialAdapter);
+
 		DriverFeature.updateDriverInfo();
 	}
 
 	/**
 	 * Auxiliary routines to enable using Buggy Simulator.
 	 * 
-	 * @param application Application context.
+	 * @param application
+	 *            Application context.
 	 */
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
@@ -65,7 +72,8 @@ public class TestJobs2dPatterns {
 	/**
 	 * Setup menu for adjusting logging settings.
 	 * 
-	 * @param application Application context.
+	 * @param application
+	 *            Application context.
 	 */
 	private static void setupLogger(Application application) {
 		application.addComponentMenu(Logger.class, "Logger", 0);
