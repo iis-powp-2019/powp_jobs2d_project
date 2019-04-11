@@ -3,8 +3,10 @@ package edu.kis.powp.jobs2d.drivers.adapter;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.drivers.factory.EnhancedLineFactory;
+import edu.kis.powp.jobs2d.drivers.factory.IEnhancedLine;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
+import java.awt.*;
 
 
 public class LineDrawerAdapter implements Job2dDriver {
@@ -37,6 +39,15 @@ public class LineDrawerAdapter implements Job2dDriver {
         this.type = type;
     }
 
+    public void setLineThickness(float thickness){
+        if(line instanceof IEnhancedLine)
+            ((IEnhancedLine)line).setThickness(thickness);
+    }
+
+    public void setLineColor(Color color){
+        if(line instanceof IEnhancedLine)
+            ((IEnhancedLine)line).setColor(color);
+    }
 
     @Override
     public void setPosition(int x, int y) {
