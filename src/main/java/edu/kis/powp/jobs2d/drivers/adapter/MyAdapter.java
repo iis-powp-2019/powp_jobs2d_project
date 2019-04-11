@@ -23,6 +23,7 @@ public class MyAdapter extends DrawPanelController implements Job2dDriver {
         this.startY = y;
     }
 
+    // tu coś jest nieuzywane
     @Override
     public void operateTo(int x, int y) {
         ILine line = LineFactory.getBasicLine();
