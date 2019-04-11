@@ -4,6 +4,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
+import edu.kis.powp.jobs2d.drivers.adapter.MyAdapter;
 
 /**
  * Drawer test.
@@ -21,5 +22,21 @@ public class TestDrawer {
 		line.setStartCoordinates(-100, -60);
 		line.setEndCoordinates(60, 130);
 		controller.drawLine(line);
+		line.setStartCoordinates(60, 130);
+		line.setEndCoordinates(-100, 130);
+		controller.drawLine(line);
+		line.setStartCoordinates(-100, 130);
+		line.setEndCoordinates(-100, -60);
+		controller.drawLine(line);
+		line.setStartCoordinates(-100, -60);
+		line.setEndCoordinates(60, -60);
+		controller.drawLine(line);
+		line.setStartCoordinates(60, -60);
+		line.setEndCoordinates(60, 130);
+		controller.drawLine(line);
+		line.setStartCoordinates(60, -60);
+		line.setEndCoordinates(-100, 130);
+		controller.drawLine(line);
+
 	}
 }
