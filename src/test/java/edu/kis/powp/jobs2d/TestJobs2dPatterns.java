@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.FigureJaneAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineDrawerAdapter;
@@ -31,7 +32,7 @@ public class TestJobs2dPatterns {
 
         application.addTest("Figure Joe 1", new SelectTestFigureOptionListener(DriverFeature.getDriverManager()));
         application.addTest("Figure Joe 2", new SelectTestFigure2OptionListener(DriverFeature.getDriverManager()));
-        application.addTest("Figure Jane", new SelectFigureJaneOptionListener(new FigureJaneAdapter()));
+        application.addTest("Figure Jane", new SelectFigureJaneOptionListener(DriverFeature.getDriverManager()));
     }
 
     /**
@@ -49,6 +50,9 @@ public class TestJobs2dPatterns {
 
         Job2dDriver lineDrawer = new SpecialLineDrawerAdapter();
         DriverFeature.addDriver("Solid Simulator", lineDrawer);
+
+        Job2dDriver janeDriver = new FigureJaneAdapter();
+        DriverFeature.addDriver("Jane adapter", janeDriver);
 
         DriverFeature.updateDriverInfo();
     }
