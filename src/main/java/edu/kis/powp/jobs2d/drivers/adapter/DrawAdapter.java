@@ -1,6 +1,5 @@
 package edu.kis.powp.jobs2d.drivers.adapter;
 
-import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
@@ -9,10 +8,10 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer with several bugs.
  */
-public class DrawController extends DrawPanelController implements Job2dDriver {
+public class DrawAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	public DrawController() {
+	public DrawAdapter() {
 		super();
 	}
 
@@ -37,3 +36,5 @@ public class DrawController extends DrawPanelController implements Job2dDriver {
 		return "@Q!$!@$!#@$(*#@&Q(%^*#@";
 	}
 }
+//adapter klasy stosuje się kiedy klasa nie może być użyta jeśli ma niekompatybilny interfejs
+//lub gdy nie ma sie kodu ódłowego klas a nie mozna zmienic ich interfejsu, a jeśli ma się kod zródłowy klasy to nie powinno sie zmieniac interfejsu klasy

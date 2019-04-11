@@ -6,7 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.DrawController;
+import edu.kis.powp.jobs2d.drivers.adapter.DrawAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -39,8 +40,13 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new DrawController();
+		Job2dDriver testDriver = new DrawAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+		
+		DriverFeature.addDriver("Solid Line", testDriver);
+
+		Job2dDriver lineDrawerAdapter = new LineDrawerAdapter();
+		DriverFeature.addDriver("Dashed Line", lineDrawerAdapter);
 
 		DriverFeature.updateDriverInfo();
 	}
