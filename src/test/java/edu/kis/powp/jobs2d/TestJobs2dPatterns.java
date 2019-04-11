@@ -53,6 +53,8 @@ public class TestJobs2dPatterns {
 		Job2dDriver specialAdapter = new LineDrawerAdapter();
 		DriverFeature.addDriver("Special Simulator", specialAdapter);
 
+		
+
 		DriverFeature.updateDriverInfo();
 	}
 
