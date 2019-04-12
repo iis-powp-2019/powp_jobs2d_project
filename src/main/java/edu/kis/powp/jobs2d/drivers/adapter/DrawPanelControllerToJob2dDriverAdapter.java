@@ -13,9 +13,9 @@ import edu.kis.powp.jobs2d.features.DriverFeature;
 public class DrawPanelControllerToJob2dDriverAdapter implements Job2dDriver {
 
 	private int startX = 0, startY = 0;
-
-	public DrawPanelControllerToJob2dDriverAdapter() {
-		super();
+	private DrawPanelController controller;
+	public DrawPanelControllerToJob2dDriverAdapter(DrawPanelController controller) {
+		this.controller = controller;
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class DrawPanelControllerToJob2dDriverAdapter implements Job2dDriver {
 		ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
-		DrawerFeature.getDrawerController().drawLine(line);
+		controller.drawLine(line);
 		setPosition(x,y);
 	}
 
