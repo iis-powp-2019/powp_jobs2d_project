@@ -46,9 +46,17 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new DrawPanelControllerToJob2dDriverAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
-		Job2dDriver driverWithLines = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+		Job2dDriver driverWithSpecialLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
 																					LineFactory.getSpecialLine());
-		DriverFeature.addDriver("Lines Driver", driverWithLines);
+		DriverFeature.addDriver("SpecialLine Driver", driverWithSpecialLine);
+
+		Job2dDriver driverWithDottedLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+																					LineFactory.getDottedLine());
+		DriverFeature.addDriver("DottedLine Driver", driverWithDottedLine);
+
+		Job2dDriver driverWithBasicLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+																					LineFactory.getBasicLine());
+		DriverFeature.addDriver("BasicLine Driver", driverWithBasicLine);
 
 		DriverFeature.updateDriverInfo();
 	}
