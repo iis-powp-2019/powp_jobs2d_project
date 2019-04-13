@@ -1,16 +1,18 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
+import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerToJob2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineWithExtendedFunctionality;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -46,17 +48,22 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new DrawPanelControllerToJob2dDriverAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
+
 		Job2dDriver driverWithSpecialLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
-																					LineFactory.getSpecialLine());
+				new LineWithExtendedFunctionality(LineFactory.getSpecialLine()));
 		DriverFeature.addDriver("SpecialLine Driver", driverWithSpecialLine);
 
 		Job2dDriver driverWithDottedLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
-																					LineFactory.getDottedLine());
+				new LineWithExtendedFunctionality(LineFactory.getDottedLine()));
 		DriverFeature.addDriver("DottedLine Driver", driverWithDottedLine);
 
 		Job2dDriver driverWithBasicLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
-																					LineFactory.getBasicLine());
+				new LineWithExtendedFunctionality(LineFactory.getBasicLine()));
 		DriverFeature.addDriver("BasicLine Driver", driverWithBasicLine);
+
+		Job2dDriver driverWithCustomLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new LineWithExtendedFunctionality(Color.MAGENTA,5f,false));
+		DriverFeature.addDriver("CustomLine Driver", driverWithCustomLine);
 
 		DriverFeature.updateDriverInfo();
 	}
