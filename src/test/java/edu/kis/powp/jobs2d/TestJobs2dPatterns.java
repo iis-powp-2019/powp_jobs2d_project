@@ -47,6 +47,9 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new DrawingJobs2dAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("Basic Line Simulator", testDriver);
 
+		Job2dDriver testSpecialDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController());
+		DriverFeature.addDriver("Special Line Simulator", testSpecialDriver);
+
 		DriverFeature.updateDriverInfo();
 	}
 
