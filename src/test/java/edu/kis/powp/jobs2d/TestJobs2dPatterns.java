@@ -8,8 +8,11 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.AbtractAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestFigure3OptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -27,10 +30,12 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
 				DriverFeature.getDriverManager());
 		SelectTestFigure2OptionListener selectTestFigure2OptionListener = new SelectTestFigure2OptionListener(DriverFeature.getDriverManager());
-
+        SelectTestFigure3OptionListener selectTestFigure3OptionListener = new SelectTestFigure3OptionListener(
+                DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure jane", selectTestFigure2OptionListener);
+		application.addTest("Figure joe 2", selectTestFigure3OptionListener);
 	}
 
 	/**
@@ -43,8 +48,14 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new SpecialLineAdapter(DrawerFeature.getDrawerController());
-		DriverFeature.addDriver("Buggy Simulator", testDriver);
+        Job2dDriver testDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController());
+        DriverFeature.addDriver("Buggy Simulator", testDriver);
+
+		Job2dDriver specialDriver = new SpecialLineAdapter(DrawerFeature.getDrawerController());
+		DriverFeature.addDriver("Special driver", specialDriver);
+
+        Job2dDriver abtractAdapter = new AbtractAdapter();
+        DriverFeature.addDriver("Abstract adapter", abtractAdapter);
 
 		DriverFeature.updateDriverInfo();
 	}
