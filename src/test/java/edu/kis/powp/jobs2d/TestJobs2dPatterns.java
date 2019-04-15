@@ -9,7 +9,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2d2DrawerAdapter;
-import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.Job2d2DrawerAdapter.LineStyle;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectFiguresJoeOneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectFiguresJoeTwoOptionListener;
@@ -42,11 +42,16 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new Job2d2DrawerAdapter();
+		Job2d2DrawerAdapter testDriver = new Job2d2DrawerAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
-		Job2dDriver specialLineDriver = new LineDrawerAdapter();
-		DriverFeature.addDriver("Special Line Simulator", specialLineDriver);
+		application.addComponentMenu(Job2d2DrawerAdapter.class, "Select line");
+		application.addComponentMenuElement(Job2d2DrawerAdapter.class, "Basic Line", (ActionEvent e) -> testDriver.setLineStyle(
+				LineStyle.BASIC));
+		application.addComponentMenuElement(Job2d2DrawerAdapter.class, "Dotted Line", (ActionEvent e) -> testDriver.setLineStyle(
+				LineStyle.DOTTED));
+		application.addComponentMenuElement(Job2d2DrawerAdapter.class, "Special Line", (ActionEvent e) -> testDriver.setLineStyle(
+				LineStyle.SPECIAL));
 
 		DriverFeature.updateDriverInfo();
 	}
