@@ -12,7 +12,7 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
  */
 public class Job2dDriverTest {
 	private static Job2dDriver driver = new StubDriver();
-    private  static AbstractDriver abstractDriver = new FigureJaneAdapter();
+    private static AbstractDriver abstractDriver = new FigureJaneAdapter();
 	/**
 	 * Driver test.
 	 */
