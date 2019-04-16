@@ -6,26 +6,25 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
-public class LineDrawerAdapter extends DrawPanelController implements Job2dDriver {
+public class LineDrawerAdapter  implements Job2dDriver {
     private int startX = 0, startY = 0;
     public LineDrawerAdapter() {
         super();
     }
 
     @Override
-    public void setPosition(int i, int i1) {
-        startX=i;
-        startY=i1;
+    public void setPosition(int x, int y) {
+        startX=x;
+        startY=y;
     }
 
     @Override
-    public void operateTo(int i, int i1) {
+    public void operateTo(int x, int y) {
         ILine line = LineFactory.getDottedLine();
         line.setStartCoordinates(this.startX, this.startY);
-        line.setEndCoordinates(i, i1);
-        //drawLine(line);
+        line.setEndCoordinates(x, y);
         DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
         drawPanelController.drawLine(line);
-        setPosition(i,i1);
+        setPosition(x,y);
     }
 }
