@@ -33,8 +33,4 @@ public class Job2dDriverTest {
 			System.out.println("Driver setPosition action...");
 		}
 	};
-
-	public static class Job2dCommandTest {
-
-	}
 }
