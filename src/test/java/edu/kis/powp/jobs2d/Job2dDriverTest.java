@@ -1,6 +1,5 @@
 package edu.kis.powp.jobs2d;
 
-import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.drivers.adapter.FigureJaneAdapter;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
@@ -34,4 +33,8 @@ public class Job2dDriverTest {
 			System.out.println("Driver setPosition action...");
 		}
 	};
+
+	public static class Job2dCommandTest {
+
+	}
 }
