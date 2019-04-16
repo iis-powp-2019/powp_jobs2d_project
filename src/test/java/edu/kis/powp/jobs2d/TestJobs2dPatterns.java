@@ -7,8 +7,10 @@ import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
+import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
@@ -46,9 +48,14 @@ public class TestJobs2dPatterns {
         DriverFeature.getDriverManager()
                      .setCurrentDriver(loggerDriver);
 
-        Job2dDriver testDriver = new BasicLineDrawerAdapter();
+        Job2dDriver testDriver = new LineDrawerAdapter();
         DriverFeature.addDriver("Buggy Simulator", testDriver);
-
+        
+        Job2dDriver testDriverDotted = new LineDrawerAdapter(LineFactory.getDottedLine());
+        DriverFeature.addDriver("Dotted Simulator", testDriverDotted);
+        
+        Job2dDriver testDriverSpecial = new LineDrawerAdapter(LineFactory.getSpecialLine());
+        DriverFeature.addDriver("Special Simulator", testDriverSpecial);
         DriverFeature.updateDriverInfo();
     }
 
@@ -58,13 +65,13 @@ public class TestJobs2dPatterns {
      * @param application
      *            Application context.
      */
-    private static void setupDefaultDrawerVisibilityManagement(Application application) {
-        DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
-        application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
-                                                        new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
-
-        defaultDrawerWindow.setVisible(true);
-    }
+//    private static void setupDefaultDrawerVisibilityManagement(Application application) {
+//        DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
+//        application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
+//                                                        new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
+//
+//        defaultDrawerWindow.setVisible(true);
+//    }
 
     /**
      * Setup menu for adjusting logging settings.
@@ -92,7 +99,7 @@ public class TestJobs2dPatterns {
             public void run() {
                 Application app = new Application("2d jobs Visio");
                 DrawerFeature.setupDrawerPlugin(app);
-                setupDefaultDrawerVisibilityManagement(app);
+               // setupDefaultDrawerVisibilityManagement(app);
 
                 DriverFeature.setupDriverPlugin(app);
                 setupDrivers(app);
