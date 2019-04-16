@@ -11,6 +11,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.command.ComplexCommand;
+import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
@@ -38,39 +39,36 @@ public class TestJobs2dPatterns {
 
 		application.addTest("Figure Joe 1", selectFirstTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
-		application.addTest("draw rectangle", drawRectangle(DriverFeature.getDriverManager()));
-		application.addTest("draw triangle", drawTriangle(DriverFeature.getDriverManager()));
+		application.addTest("draw rectangle",event -> {
+				DriverCommand drawRectangle = createRectangleDrawingCommand(DriverFeature.getDriverManager().getCurrentDriver());
+				drawRectangle.execute();
+			}
+		);
+		application.addTest("draw triangle", event -> {
+			DriverCommand drawTriangle = createTriangleDrawingCommand(DriverFeature.getDriverManager().getCurrentDriver());
+			drawTriangle.execute();
+		});
 	}
 
-	private static ActionListener drawRectangle(DriverManager driverManager) {
-		return new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ComplexCommand rectangleDrawer = new ComplexCommand(new ArrayList<>());
-				rectangleDrawer.addCommand(new SetPositionCommand(driverManager.getCurrentDriver(), 10,10));
-				rectangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 30, 10));
-				rectangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 30, 30));
-				rectangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 10,30));
-				rectangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 10,10));
+	private static DriverCommand createRectangleDrawingCommand(Job2dDriver driver) {
+		ComplexCommand rectangleDrawer = new ComplexCommand(new ArrayList<>());
+		rectangleDrawer.addCommand(new SetPositionCommand(driver, 10,10));
+		rectangleDrawer.addCommand(new OperateToCommand(driver, 30, 10));
+		rectangleDrawer.addCommand(new OperateToCommand(driver, 30, 30));
+		rectangleDrawer.addCommand(new OperateToCommand(driver, 10,30));
+		rectangleDrawer.addCommand(new OperateToCommand(driver, 10,10));
 
-				rectangleDrawer.execute();
-			}
-		};
+		return rectangleDrawer;
 	}
 
-	private static ActionListener drawTriangle(DriverManager driverManager) {
-		return new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ComplexCommand triangleDrawer = new ComplexCommand(new ArrayList<>());
-				triangleDrawer.addCommand(new SetPositionCommand(driverManager.getCurrentDriver(), 15,15));
-				triangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 25, 35));
-				triangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 5, 35));
-				triangleDrawer.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 15,15));
+	private static DriverCommand createTriangleDrawingCommand(Job2dDriver driver) {
+		ComplexCommand triangleDrawer = new ComplexCommand(new ArrayList<>());
+		triangleDrawer.addCommand(new SetPositionCommand(driver, 15,15));
+		triangleDrawer.addCommand(new OperateToCommand(driver, 25, 35));
+		triangleDrawer.addCommand(new OperateToCommand(driver, 5, 35));
+		triangleDrawer.addCommand(new OperateToCommand(driver, 15,15));
 
-				triangleDrawer.execute();
-			}
-		};
+		return triangleDrawer;
 	}
 
 	/**
