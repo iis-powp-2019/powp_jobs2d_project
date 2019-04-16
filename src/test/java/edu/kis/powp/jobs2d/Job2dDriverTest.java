@@ -15,7 +15,10 @@ public class Job2dDriverTest {
 	 * Driver test.
 	 */
 	public static void main(String[] args) {
+		System.out.println("First Figure Test:");
 		FiguresJoe.figureScript1(driver);
+		System.out.println("Second Figure Test:");
+		FiguresJoe.figureScript2(driver);
 	}
 
 	private static class StubDriver implements Job2dDriver {
@@ -29,5 +32,5 @@ public class Job2dDriverTest {
 		public void setPosition(int x, int y) {
 			System.out.println("Driver setPosition action...");
 		}
-	};
+	}
 }
