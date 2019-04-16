@@ -12,10 +12,11 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 public class MyAdapter extends DrawPanelController implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
+	private DrawPanelController drawPanelController ;
 
 	public MyAdapter() {
 		super();
+		this.drawPanelController = DrawerFeature.getDrawerController();
 	}
 
 	@Override
