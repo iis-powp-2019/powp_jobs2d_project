@@ -18,4 +18,8 @@ public class ComplexCommand implements DriverCommand {
 			command.execute();
 		}
 	}
+
+	public void addCommand(DriverCommand command) {
+		this.commandsToExecute.add(command);
+	}
 }
