@@ -12,7 +12,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.appbase.gui.WindowComponent;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
-import edu.kis.powp.jobs2d.drivers.adapter.MyAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -30,7 +30,7 @@ public class TestDrawer {
 	
 	public static void main(String[] args) {
 		Application app = new Application("Drawer App");
-		MyAdapter controller = new MyAdapter(app);
+		DrawerAdapter controller = new DrawerAdapter(app);
 		DriverManager dw = new DriverManager();
 		dw.setCurrentDriver(controller);
 		app.addTest("Figure Joe 1", new SelectTestFigureOptionListener(dw));
