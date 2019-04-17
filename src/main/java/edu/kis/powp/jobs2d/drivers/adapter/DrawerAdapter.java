@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d.drivers.adapter;
 
+import com.google.inject.Inject;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
@@ -9,9 +10,12 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer with several bugs.
  */
-public class DrawerAdapter extends DrawPanelController implements Job2dDriver {
+public class DrawerAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
-	DrawPanelController drawerFeature = new DrawerFeature().getDrawerController();
+
+	@Inject
+	DrawerFeature drawerFeature;
+
 
 	public DrawerAdapter() {
 		super();
@@ -29,7 +33,7 @@ public class DrawerAdapter extends DrawPanelController implements Job2dDriver {
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 
-		drawerFeature.drawLine(line);
+		drawerFeature.getDrawerController().drawLine(line);
 		setPosition(x,y);
 
 	}
