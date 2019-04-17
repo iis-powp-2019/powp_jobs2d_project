@@ -22,4 +22,8 @@ public class AbstractDriverAdapter extends AbstractDriver {
         drawPanelController.drawLine(line);
         setPosition(x, y);
     }
+
+    @Override public String toString() {
+        return "Abstract Driver Adapter";
+    }
 }
