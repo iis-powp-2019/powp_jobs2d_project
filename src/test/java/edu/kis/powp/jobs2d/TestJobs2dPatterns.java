@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,6 +54,9 @@ public class TestJobs2dPatterns {
 
         Job2dDriver testDriverThird = new LineDrawerAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
         DriverFeature.addDriver("Buggy Dotted Line Simulator", testDriverThird);
+
+        Job2dDriver testDriverFourth = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new ConfigurableLine(Color.GREEN, 1.5f, true));
+        DriverFeature.addDriver("Buggy Configurable Line Simulator", testDriverFourth);
 
 		DriverFeature.updateDriverInfo();
 	}
