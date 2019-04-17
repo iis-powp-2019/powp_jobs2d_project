@@ -47,8 +47,15 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new DrawerAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
-		Job2dDriver specialLine = new LineDrawerAdapter();
-		DriverFeature.addDriver("Special Line Simulator ", specialLine);
+//		Job2dDriver specialLine = new LineDrawerAdapter();
+//		DriverFeature.addDriver("Special Line Simulator ", specialLine);
+		application.addComponentMenu(DrawerAdapter.class, "Choose line to draw");
+		application.addComponentMenuElement(DrawerAdapter.class, "Normal line",
+				(ActionEvent e) -> ((DrawerAdapter) testDriver).choose_line(1));
+		application.addComponentMenuElement(DrawerAdapter.class, "Dotted line",
+				(ActionEvent e) -> ((DrawerAdapter) testDriver).choose_line(2));
+		application.addComponentMenuElement(DrawerAdapter.class, "Special line",
+				(ActionEvent e) -> ((DrawerAdapter) testDriver).choose_line(3));
 
 		DriverFeature.updateDriverInfo();
 	}

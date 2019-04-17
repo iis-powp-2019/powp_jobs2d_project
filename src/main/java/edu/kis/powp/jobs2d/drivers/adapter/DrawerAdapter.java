@@ -7,11 +7,14 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
+import javax.sound.sampled.Line;
+
 /**
  * driver adapter to drawer with several bugs.
  */
 public class DrawerAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
+	private ILine line;
 
 	@Inject
 	DrawerFeature drawerFeature;
@@ -19,6 +22,13 @@ public class DrawerAdapter implements Job2dDriver {
 
 	public DrawerAdapter() {
 		super();
+	}
+
+	public void choose_line(int choose)
+	{
+		if(choose==1) line = LineFactory.getBasicLine();
+		else if(choose==2) line = LineFactory.getDottedLine();
+		else if(choose==3) line = LineFactory.getSpecialLine();
 	}
 
 	@Override
@@ -29,7 +39,7 @@ public class DrawerAdapter implements Job2dDriver {
 
 	@Override
 	public void operateTo(int x, int y) {
-		ILine line = LineFactory.getBasicLine();
+		//ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 
