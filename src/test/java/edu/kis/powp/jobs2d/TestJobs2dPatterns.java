@@ -8,9 +8,11 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListenerSecond;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -31,8 +33,12 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListenerSecond selectTestFigureOptionListenerSecond = new SelectTestFigureOptionListenerSecond(
 				DriverFeature.getDriverManager());
 
+		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
+				DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Jame 1", selectTestFigureOptionListenerSecond);
+		application.addTest("Figure Joe 2", selectTestFigureOptionListenerSecond);
+		application.addTest("Figure Jane 1", selectTestFigureJaneOptionListener);
 	}
 
 	/**
@@ -46,10 +52,13 @@ public class TestJobs2dPatterns {
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
 		Job2dDriver testDriver = new Job2dDriverAdapter(DrawerFeature.getDrawerController());
-		DriverFeature.addDriver("Buggy Simulator", testDriver);
+		DriverFeature.addDriver("Job2d Simulator", testDriver);
 
 		Job2dDriver lineTestDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController());
-		DriverFeature.addDriver("Buggy Second Simulator", lineTestDriver);
+		DriverFeature.addDriver("Line Simulator", lineTestDriver);
+
+		Job2dDriver abstractDriverAdapter = new AbstractDriverAdapter(DrawerFeature.getDrawerController());
+		DriverFeature.addDriver("Abstract Simulator", abstractDriverAdapter);
 
 		DriverFeature.updateDriverInfo();
 	}
@@ -92,7 +101,6 @@ public class TestJobs2dPatterns {
 			public void run() {
 				Application app = new Application("2d jobs Visio");
 				DrawerFeature.setupDrawerPlugin(app);
-				//setupDefaultDrawerVisibilityManagement(app);
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);
 				setupPresetTests(app);
