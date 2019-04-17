@@ -29,4 +29,8 @@ public class LineDrawerAdapter implements Job2dDriver {
         drawPanelController.drawLine(line);
         setPosition(x, y);
     }
+
+    @Override public String toString() {
+        return "Line Drawer";
+    }
 }
