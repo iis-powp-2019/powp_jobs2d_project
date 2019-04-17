@@ -6,8 +6,6 @@ import edu.kis.powp.jobs2d.AbstractDriver;
 
 public class AbstractDriverAdapter extends AbstractDriver {
 
-    private int startX = 0;
-    private int startY = 0;
     private DrawPanelController drawPanelController;
     private ILine line;
 
@@ -19,7 +17,7 @@ public class AbstractDriverAdapter extends AbstractDriver {
 
     @Override
     public void operateTo(int x, int y) {
-        line.setStartCoordinates(this.startX, this.startY);
+        line.setStartCoordinates(this.getX(), this.getY());
         line.setEndCoordinates(x, y);
         setPosition(x, y);
 

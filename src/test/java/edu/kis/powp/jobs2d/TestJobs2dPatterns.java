@@ -9,9 +9,11 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerToJobs2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureSecondOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -22,7 +24,7 @@ public class TestJobs2dPatterns {
 
 	/**
 	 * Setup test concerning preset figures in context.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
@@ -32,13 +34,17 @@ public class TestJobs2dPatterns {
 		SelectTestFigureSecondOptionListener selectTestFigureSecondOptionListener = new SelectTestFigureSecondOptionListener(
 				DriverFeature.getDriverManager());
 
+        SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
+                DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureSecondOptionListener);
+        application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 	}
 
 	/**
 	 * Setup driver manager, and set default driver for application.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupDrivers(Application application) {
@@ -58,12 +64,15 @@ public class TestJobs2dPatterns {
         Job2dDriver testDriverFourth = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new ConfigurableLine(Color.GREEN, 1.5f, true));
         DriverFeature.addDriver("Buggy Configurable Line Simulator", testDriverFourth);
 
+        Job2dDriver abstractDriverAdapter = new AbstractDriverAdapter(0, 0, DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
+        DriverFeature.addDriver("Buggy AbstractDriverAdapter and Figure Jane Simulator", abstractDriverAdapter);
+
 		DriverFeature.updateDriverInfo();
 	}
 
 	/**
 	 * Auxiliary routines to enable using Buggy Simulator.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
@@ -75,7 +84,7 @@ public class TestJobs2dPatterns {
 
 	/**
 	 * Setup menu for adjusting logging settings.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupLogger(Application application) {
