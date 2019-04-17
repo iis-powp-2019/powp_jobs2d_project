@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
@@ -8,9 +9,11 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
+import edu.kis.legacy.drawer.shape.line.NewILine;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -29,6 +32,11 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		
+		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
+                DriverFeature.getDriverManager());
+
+        application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 	}
 
 	/**
@@ -49,6 +57,9 @@ public class TestJobs2dPatterns {
 
         Job2dDriver testDriver3 = new LineDrawerAdapter(LineFactory.getSpecialLine());
         DriverFeature.addDriver("Bike Simulator", testDriver3);
+        
+        Job2dDriver testDriver5 = new JaneDriver(0, 0, new NewILine(Color.PINK, 10, false));
+        DriverFeature.addDriver("Jane Simulator", testDriver5);
 
 		DriverFeature.updateDriverInfo();
 	}
