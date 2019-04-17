@@ -9,33 +9,32 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer with several bugs.
  */
-public class DrawPanelControllerToJob2dDriverAdapter extends DrawPanelController implements Job2dDriver {
-	private int startX = 0, startY = 0;
+public class DrawPanelControllerToJob2dDriverAdapter implements Job2dDriver {
+    private int startX = 0, startY = 0;
+    private DrawPanelController controller;
 
-	public DrawPanelControllerToJob2dDriverAdapter() {
-		super();
-	}
+    public DrawPanelControllerToJob2dDriverAdapter(DrawPanelController drawPanelController) {
+        this.controller = drawPanelController;
+    }
 
-	@Override
-	public void setPosition(int x, int y) {
-		this.startX = x;
-		this.startY = y;
-	}
+    @Override
+    public void setPosition(int x, int y) {
+        this.startX = x;
+        this.startY = y;
+    }
 
-	@Override
-	public void operateTo(int x, int y) {
-		ILine line = LineFactory.getBasicLine();
-		line.setStartCoordinates(this.startX, this.startY);
-		line.setEndCoordinates(x, y);
+    @Override
+    public void operateTo(int x, int y) {
+        ILine line = LineFactory.getBasicLine();
+        line.setStartCoordinates(this.startX, this.startY);
+        line.setEndCoordinates(x, y);
 
-		setPosition(x, y);
+        setPosition(x, y);
+        controller.drawLine(line);
+    }
 
-		DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
-		drawPanelController.drawLine(line);
-	}
-
-	@Override
-	public String toString() {
-		return "@Q!$!@$!#@$(*#@&Q(%^*#@";
-	}
+    @Override
+    public String toString() {
+        return "@Q!$!@$!#@$(*#@&Q(%^*#@";
+    }
 }
