@@ -27,4 +27,19 @@ public class CustomLine extends AbstractLine {
         this.thickness = thickness;
         this.dotted = dotted;
     }
+
+    public void setColor(Color color)
+    {
+        this.color = color;
+    }
+
+    public void setThickness(float thickness)
+    {
+        this.thickness = thickness;
+    }
+
+    public void setDotted(boolean dotted)
+    {
+        this.dotted = dotted;
+    }
 }
