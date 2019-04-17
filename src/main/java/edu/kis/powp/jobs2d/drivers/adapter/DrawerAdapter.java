@@ -14,7 +14,7 @@ import javax.sound.sampled.Line;
  */
 public class DrawerAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
-	private ILine line;
+	private ILine line = LineFactory.getBasicLine();
 
 	@Inject
 	DrawerFeature drawerFeature;
