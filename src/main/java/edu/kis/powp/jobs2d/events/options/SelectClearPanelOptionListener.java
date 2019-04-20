@@ -1,4 +1,4 @@
-package edu.kis.powp.jobs2d.events;
+package edu.kis.powp.jobs2d.events.options;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

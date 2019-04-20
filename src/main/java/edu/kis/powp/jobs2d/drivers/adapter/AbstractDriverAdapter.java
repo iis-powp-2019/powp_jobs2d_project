@@ -23,7 +23,7 @@ public class AbstractDriverAdapter extends AbstractDriver {
         line.setEndCoordinates(x, y);
 
         drawPanelController.drawLine(line);
-        
+
         setPosition(x, y);
     }
 
