@@ -33,7 +33,12 @@ public class DrawingJob2dAdapter extends DrawPanelController implements Job2dDri
         line.setEndCoordinates(x, y);
 
         drawPanelController.drawLine(line);
-        
+
         setPosition(x, y);
+    }
+
+    @Override
+    public String toString(){
+        return "Drawing Job2d Adapter";
     }
 }

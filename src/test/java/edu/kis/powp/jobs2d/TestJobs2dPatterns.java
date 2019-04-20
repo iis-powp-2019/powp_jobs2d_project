@@ -46,6 +46,9 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDriver = new DrawingJob2dAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
+		Job2dDriver drawingJob2Driver = new DrawingJob2dAdapter(DrawerFeature.getDrawerController());
+		DriverFeature.addDriver("Drawing Job2D Driver", drawingJob2Driver );
+
 		DriverFeature.updateDriverInfo();
 	}
 
