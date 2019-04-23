@@ -6,6 +6,7 @@ public class ComplexCommand implements DriverCommand  {
 
     private List<DriverCommand> driverCommands;
 
+
     public ComplexCommand(List<DriverCommand> driverCommands) {
         this.driverCommands = driverCommands;
     }
