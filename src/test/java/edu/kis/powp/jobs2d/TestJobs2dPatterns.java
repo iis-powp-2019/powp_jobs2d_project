@@ -34,9 +34,14 @@ public class TestJobs2dPatterns {
 		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
 				new FigureJaneAdapter());
 
+		SelectComplexRectangle selectComplexRectangle = new SelectComplexRectangle(DriverFeature.getDriverManager());
+		SelectComplexSquare selectComplexSquare = new SelectComplexSquare(DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListenerForSecondScript);
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener );
+		application.addTest("Complex Command Rectangle", selectComplexRectangle);
+		application.addTest("Square Command Rectangle", selectComplexSquare);
 	}
 
 	/**
