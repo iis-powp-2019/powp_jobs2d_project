@@ -8,10 +8,10 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer with several bugs.
  */
-public class LineDrawerAdapter implements Job2dDriver {
+public class GenericLineDrawerAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	public LineDrawerAdapter() {
+	public GenericLineDrawerAdapter() {
 		super();
 	}
 
