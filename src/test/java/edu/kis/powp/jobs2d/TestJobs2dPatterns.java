@@ -12,6 +12,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -35,6 +36,11 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+
+		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
+				DriverFeature.getDriverManager());
+
+		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 	}
 
 	/**
@@ -58,6 +64,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver testDriver4 = new LineDrawerAdapter(new ILineSpec(Color.BLUE, 40, false));
 		DriverFeature.addDriver("MyLine Simulator", testDriver4);
+
+		Job2dDriver testDriver5 = new FiguresJaneDriver(0, 0, new ILineSpec(Color.RED, 10, false));
+		DriverFeature.addDriver("Jane Simulator", testDriver5);
 
 		DriverFeature.updateDriverInfo();
 	}
