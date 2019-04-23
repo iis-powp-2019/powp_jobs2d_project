@@ -5,6 +5,8 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
+import java.awt.*;
+
 /**
  * driver adapter to drawer with several bugs.
  */
@@ -23,7 +25,7 @@ public class BasicLineDrawerAdapter implements Job2dDriver {
 
 	@Override
 	public void operateTo(int x, int y) {
-		ILine line = LineFactory.getBasicLine();
+		ILine line = new ParametrizedLineAdapter(LineFactory.getBasicLine());
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
 
