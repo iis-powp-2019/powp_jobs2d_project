@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
@@ -8,6 +9,7 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.AdvancedLineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DottedLineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
@@ -52,7 +54,14 @@ public class TestJobs2dPatterns {
 		
 		Job2dDriver testDriver2 = new DottedLineDrawerAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("dotted Buggy Simulator", testDriver2);
-
+		
+		
+		Job2dDriver testDriver3 = new AdvancedLineDrawerAdapter(DrawerFeature.getDrawerController(), Color.RED, 3.333, false);
+		DriverFeature.addDriver("advanced Buggy Simulator", testDriver3);
+		
+		Job2dDriver testDriver4 = new AdvancedLineDrawerAdapter(DrawerFeature.getDrawerController());
+		DriverFeature.addDriver("linia ktora zadowoli Pata Terna", testDriver4);
+		
 		DriverFeature.updateDriverInfo();
 	}
 
