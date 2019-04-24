@@ -46,7 +46,7 @@ private int startX = 0, startY = 0;
 
 	@Override
 	public String toString() {
-		return "kreska przerywana";
+		return "przerywana zaawansowana";
 	}
 
 }
