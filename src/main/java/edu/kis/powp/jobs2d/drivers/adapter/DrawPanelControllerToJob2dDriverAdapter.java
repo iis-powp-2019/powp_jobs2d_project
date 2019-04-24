@@ -26,7 +26,7 @@ public class DrawPanelControllerToJob2dDriverAdapter extends DrawPanelController
 		ILine line = LineFactory.getBasicLine();
 		line.setStartCoordinates(this.startX, this.startY);
 		line.setEndCoordinates(x, y);
-
+		this.setPosition(x,y);
 		drawLine(line);
 	}
 
