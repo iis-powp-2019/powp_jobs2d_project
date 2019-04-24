@@ -1,18 +1,23 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
+import edu.kis.legacy.drawer.shape.ILine;
+import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.MyAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerToJob2dDriverAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineWithExtendedFunctionality;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -23,10 +28,11 @@ public class TestJobs2dPatterns {
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
 
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+		application.addTest("Figure Joe 1", new SelectTestFigureOptionListener(DriverFeature.getDriverManager(),
+																					(FiguresJoe::figureScript1)));
+		application.addTest("Figure Joe 2", new SelectTestFigureOptionListener(DriverFeature.getDriverManager(),
+																					(FiguresJoe::figureScript2)));
 	}
 
 	/**
@@ -39,8 +45,25 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
-		Job2dDriver testDriver = new MyAdapter();
+		Job2dDriver testDriver = new DrawPanelControllerToJob2dDriverAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+
+
+		Job2dDriver driverWithSpecialLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new LineWithExtendedFunctionality(LineFactory.getSpecialLine()));
+		DriverFeature.addDriver("SpecialLine Driver", driverWithSpecialLine);
+
+		Job2dDriver driverWithDottedLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new LineWithExtendedFunctionality(LineFactory.getDottedLine()));
+		DriverFeature.addDriver("DottedLine Driver", driverWithDottedLine);
+
+		Job2dDriver driverWithBasicLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new LineWithExtendedFunctionality(LineFactory.getBasicLine()));
+		DriverFeature.addDriver("BasicLine Driver", driverWithBasicLine);
+
+		Job2dDriver driverWithCustomLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new LineWithExtendedFunctionality(Color.MAGENTA,5f,false));
+		DriverFeature.addDriver("CustomLine Driver", driverWithCustomLine);
 
 		DriverFeature.updateDriverInfo();
 	}
