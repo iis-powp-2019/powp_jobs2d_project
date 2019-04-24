@@ -8,19 +8,31 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 /**
  * driver adapter to drawer with several bugs.
  */
-public class MyAdapter extends DrawPanelController implements Job2dDriver {
+public class DrawerToJobs2dAdapter extends DrawPanelController implements Job2dDriver {
 	private int startX = 0, startY = 0;
 
-	public MyAdapter() {
+	public DrawerToJobs2dAdapter() {
 		super();
 	}
 
+	/**
+	 * Changes the head coordinates (in passive mode).
+	 *
+	 * @param x new position on the X axis.
+	 * @param y new position on the Y axis.
+	 */
 	@Override
 	public void setPosition(int x, int y) {
 		this.startX = x;
 		this.startY = y;
 	}
 
+	/**
+	 * Moves the head (in active mode) to the given coordinates.
+	 *
+	 * @param x end of the line in X axis.
+	 * @param y end of the line in Y axis.
+	 */
 	@Override
 	public void operateTo(int x, int y) {
 		ILine line = LineFactory.getBasicLine();

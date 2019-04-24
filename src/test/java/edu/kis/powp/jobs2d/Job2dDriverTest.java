@@ -9,6 +9,7 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
  * @author Dominik
  */
 public class Job2dDriverTest {
+	// urządzenie
 	private static Job2dDriver driver = new StubDriver();
 
 	/**
@@ -18,16 +19,19 @@ public class Job2dDriverTest {
 		FiguresJoe.figureScript1(driver);
 	}
 
+	// urządzenie wykorzystujące metody z J2D
 	private static class StubDriver implements Job2dDriver {
 
+		// ACTIVE
 		@Override
 		public void operateTo(int x, int y) {
-			System.out.println("Driver operateTo action...");
+			System.out.println("OPERATE TO x: " + x + "y: " + y);
 		}
 
+		// PASSIVE
 		@Override
 		public void setPosition(int x, int y) {
-			System.out.println("Driver setPosition action...");
+			System.out.println("SET POSITION x: " + x + "y: " + y);
 		}
 	};
 }
