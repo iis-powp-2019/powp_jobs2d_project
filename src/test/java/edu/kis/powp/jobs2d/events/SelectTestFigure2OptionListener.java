@@ -6,10 +6,10 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TestFigure2 implements ActionListener {
+public class SelectTestFigure2OptionListener implements ActionListener {
     private DriverManager driverManager;
 
-    public TestFigure2(DriverManager driverManager) {
+    public SelectTestFigure2OptionListener(DriverManager driverManager) {
         this.driverManager = driverManager;
     }
 
