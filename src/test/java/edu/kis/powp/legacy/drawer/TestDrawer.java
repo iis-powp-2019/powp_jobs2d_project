@@ -10,11 +10,11 @@ import edu.kis.legacy.drawer.shape.LineFactory;
  * 
  * @author Dominik
  */
-public class TestDrawer {
+/*public class TestDrawer {
 	/**
 	 * Drawer test.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		DrawPanelController controller = new DrawPanelController();
 		DefaultDrawerFrame.getDefaultDrawerFrame().setVisible(true);
 		ILine line = LineFactory.getBasicLine();
@@ -22,4 +22,5 @@ public class TestDrawer {
 		line.setEndCoordinates(60, 130);
 		controller.drawLine(line);
 	}
-}
+
+}*/
