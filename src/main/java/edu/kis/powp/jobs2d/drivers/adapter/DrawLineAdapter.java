@@ -9,11 +9,11 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 /**
  * driver adapter to drawer with several bugs.
  */
-public class MyAdapter implements Job2dDriver {
+public class DrawLineAdapter implements Job2dDriver {
 
     private int startX = 0, startY = 0;
 
-    public MyAdapter() {
+    public DrawLineAdapter() {
         super();
     }
 
