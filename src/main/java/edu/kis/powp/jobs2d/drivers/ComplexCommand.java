@@ -8,7 +8,7 @@ public class ComplexCommand implements DriverCommand {
     public ComplexCommand(List<DriverCommand> list) {
         listOfCommand = list;
     }
-    
+
     @Override
     public void execute() {
         for (DriverCommand item : listOfCommand) {
