@@ -37,6 +37,8 @@ public class TestJobs2dPatterns {
                 DriverFeature.getDriverManager());
 
         application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
+        
+        
 	}
 
 	/**
@@ -60,6 +62,8 @@ public class TestJobs2dPatterns {
         
         Job2dDriver testDriver5 = new JaneDriver(0, 0, new NewILine(Color.PINK, 10, false));
         DriverFeature.addDriver("Jane Simulator", testDriver5);
+        
+        DriverFeature.addDriver("Rectangle Simulator", testDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
