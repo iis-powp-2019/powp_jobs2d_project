@@ -10,6 +10,7 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.SelectTestCommandFigureOptionListener;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerToJob2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineWithExtendedFunctionality;
@@ -33,6 +34,7 @@ public class TestJobs2dPatterns {
 																					(FiguresJoe::figureScript1)));
 		application.addTest("Figure Joe 2", new SelectTestFigureOptionListener(DriverFeature.getDriverManager(),
 																					(FiguresJoe::figureScript2)));
+		application.addTest("Figure Joe 3", new SelectTestCommandFigureOptionListener(DriverFeature.getDriverManager()));
 	}
 
 	/**
@@ -63,6 +65,8 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver driverWithCustomLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
 				new LineWithExtendedFunctionality(Color.MAGENTA,5f,false));
+
+
 		DriverFeature.addDriver("CustomLine Driver", driverWithCustomLine);
 
 		DriverFeature.updateDriverInfo();

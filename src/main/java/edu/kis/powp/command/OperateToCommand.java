@@ -7,7 +7,7 @@ public class OperateToCommand implements DriverCommand {
     private int y;
     private Job2dDriver driver;
 
-    OperateToCommand(Job2dDriver driver,int x, int y)
+    public OperateToCommand(Job2dDriver driver,int x, int y)
     {
         this.driver = driver;
         this.x = x;
