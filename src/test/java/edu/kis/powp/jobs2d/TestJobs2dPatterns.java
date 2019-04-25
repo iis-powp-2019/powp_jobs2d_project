@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.commands.FigureFactory;
 import edu.kis.powp.jobs2d.drivers.adapter.CustomLine;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -31,11 +32,17 @@ public class TestJobs2dPatterns {
                 DriverFeature.getDriverManager());
         SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
                 DriverFeature.getDriverManager());
-        SelectTestFigureOptionListener3 selectTestFigureOptionListener3 = new SelectTestFigureOptionListener3(
-                DriverFeature.getDriverManager());
+        SelectTestFigureOptionListener3 hexagon = new SelectTestFigureOptionListener3(DriverFeature.getDriverManager(),
+                FigureFactory.getHexagon(DriverFeature.getDriverManager()));
+        SelectTestFigureOptionListener3 square = new SelectTestFigureOptionListener3(DriverFeature.getDriverManager(),
+                FigureFactory.getSquare(DriverFeature.getDriverManager()));
+        SelectTestFigureOptionListener3 triangle = new SelectTestFigureOptionListener3(DriverFeature.getDriverManager(),
+                FigureFactory.getTriangle(DriverFeature.getDriverManager()));
         application.addTest("Figure Joe 1", selectTestFigureOptionListener);
         application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
-        application.addTest("mytest", selectTestFigureOptionListener3);
+        application.addTest("hexagon", hexagon);
+        application.addTest("square", square);
+        application.addTest("triagle", triangle);
     }
 
     /**
