@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d;
 
+import edu.kis.powp.jobs2d.drivers.command.DriverCommand;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 /**
@@ -18,6 +19,7 @@ public class Job2dDriverTest {
 	}
 
 	private static class StubDriver implements Job2dDriver {
+
 
 		@Override
 		public void operateTo(int x, int y) {
