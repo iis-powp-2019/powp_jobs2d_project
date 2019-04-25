@@ -21,6 +21,6 @@ public class SelectTestFigureJaneListener implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        FiguresJane.figureScript((AbstractDriver) driverManager.getCurrentDriver());
+        FiguresJoe.figureScript2(driverManager.getCurrentDriver());
     }
 }
