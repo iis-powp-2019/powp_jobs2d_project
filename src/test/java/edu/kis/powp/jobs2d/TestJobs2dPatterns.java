@@ -2,12 +2,19 @@ package edu.kis.powp.jobs2d;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.Command.ComplexCommand;
+import edu.kis.powp.jobs2d.Command.DriverCommand;
+import edu.kis.powp.jobs2d.Command.OperateToCommand;
+import edu.kis.powp.jobs2d.Command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPaneControllerToJob2dDriverAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -32,6 +39,21 @@ public class TestJobs2dPatterns {
 
 		application.addTest("Figure Joe 1", selectFirstTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
+		application.addTest("Complex Command", new ActionListener() {
+
+			@Override public void actionPerformed(ActionEvent e) {
+				List<DriverCommand> commands = new ArrayList<>();
+
+				commands.add(new SetPositionCommand(-60,-60, DriverFeature.getDriverManager().getCurrentDriver()));
+				commands.add(new OperateToCommand(60,-60, DriverFeature.getDriverManager().getCurrentDriver()));
+				commands.add(new OperateToCommand(60,60, DriverFeature.getDriverManager().getCurrentDriver()));
+				commands.add(new OperateToCommand(-60,60, DriverFeature.getDriverManager().getCurrentDriver()));
+				commands.add(new OperateToCommand(-60,-60, DriverFeature.getDriverManager().getCurrentDriver()));
+
+				ComplexCommand complexCommand = new ComplexCommand(commands);
+				complexCommand.execute();
+			}
+		});
 	}
 
 	/**
