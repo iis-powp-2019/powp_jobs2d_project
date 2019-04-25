@@ -5,14 +5,13 @@ import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
-import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestJaneFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -29,9 +28,11 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 		
 		SelectTestFigure2OptionListener selectTestFigure2OptionListener = new SelectTestFigure2OptionListener(DriverFeature.getDriverManager());
+		SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
+		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
 	}
 
 	/**
@@ -49,6 +50,9 @@ public class TestJobs2dPatterns {
 		
 		Job2dDriver specialAdapter = new LineDrawerAdapter();
 		DriverFeature.addDriver("Special Simulator", specialAdapter);
+		
+		Job2dDriver abstractDriverAdapter = new AbstractDriverAdapter();
+		DriverFeature.addDriver("Jane Simulator", abstractDriverAdapter);
 
 		DriverFeature.updateDriverInfo();
 	}
@@ -58,12 +62,12 @@ public class TestJobs2dPatterns {
 	 * 
 	 * @param application Application context.
 	 */
-	private static void setupDefaultDrawerVisibilityManagement(Application application) {
-		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
-		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
-				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
-		defaultDrawerWindow.setVisible(true);
-	}
+//	private static void setupDefaultDrawerVisibilityManagement(Application application) {
+//		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
+//		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
+//				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
+//		defaultDrawerWindow.setVisible(true);
+//	}
 
 	/**
 	 * Setup menu for adjusting logging settings.
