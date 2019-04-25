@@ -10,109 +10,115 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
+import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener3;
 import edu.kis.powp.jobs2d.events.SelectTestJaneFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
-import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 
 public class TestJobs2dPatterns {
 
-	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-	/**
-	 * Setup test concerning preset figures in context.
-	 *
-	 * @param application Application context.
-	 */
-	private static void setupPresetTests(Application application) {
-		SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager());
-		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
-				DriverFeature.getDriverManager());
-		SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(
-				DriverFeature.getDriverManager());
-		
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
-		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
-	}
+    /**
+     * Setup test concerning preset figures in context.
+     *
+     * @param application
+     *            Application context.
+     */
+    private static void setupPresetTests(Application application) {
+        SelectTestFigureOptionListener selectTestFigureOptionListener = new SelectTestFigureOptionListener(
+                DriverFeature.getDriverManager());
+        SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
+                DriverFeature.getDriverManager());
+        SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(
+                DriverFeature.getDriverManager());
 
-	/**
-	 * Setup driver manager, and set default driver for application.
-	 *
-	 * @param application Application context.
-	 */
-	private static void setupDrivers(Application application) {
-		Job2dDriver loggerDriver = new LoggerDriver();
-		DriverFeature.addDriver("Logger Driver", loggerDriver);
-		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
+        SelectTestFigureOptionListener3 selectTestFigureOptionListener3 = new SelectTestFigureOptionListener3(
+                DriverFeature.getDriverManager());
+        application.addTest("Figure Joe 1", selectTestFigureOptionListener);
+        application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+        application.addTest("Figure Joe 3", selectTestFigureOptionListener3);
+        application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
+    }
 
-		Job2dDriver testDriver = new DrawerAdapter();
-		DriverFeature.addDriver("Buggy Simulator", testDriver);
+    /**
+     * Setup driver manager, and set default driver for application.
+     *
+     * @param application
+     *            Application context.
+     */
+    private static void setupDrivers(Application application) {
+        Job2dDriver loggerDriver = new LoggerDriver();
+        DriverFeature.addDriver("Logger Driver", loggerDriver);
+        DriverFeature.getDriverManager()
+                     .setCurrentDriver(loggerDriver);
 
-		Job2dDriver lineDrawer = new LineDrawerAdapter();
-		DriverFeature.addDriver("Special Simulator", lineDrawer);
-		
-		Job2dDriver abstractDriverAdapter = new AbstractDriverAdapter();
-		DriverFeature.addDriver("Jane Simulator", abstractDriverAdapter);
-		
-		DriverFeature.updateDriverInfo();
-	}
+        Job2dDriver testDriver = new DrawerAdapter();
+        DriverFeature.addDriver("Buggy Simulator", testDriver);
 
-	/**
-	 * Auxiliary routines to enable using Buggy Simulator.
-	 *
-	 * @param application Application context.
-	 */
-	private static void setupDefaultDrawerVisibilityManagement(Application application) {
-		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
-		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
-				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
-		defaultDrawerWindow.setVisible(true);
-	}
+        Job2dDriver lineDrawer = new LineDrawerAdapter();
+        DriverFeature.addDriver("Special Simulator", lineDrawer);
 
-	/**
-	 * Setup menu for adjusting logging settings.
-	 *
-	 * @param application Application context.
-	 */
-	private static void setupLogger(Application application) {
-		application.addComponentMenu(Logger.class, "Logger", 0);
-		application.addComponentMenuElement(Logger.class, "Clear log",
-				(ActionEvent e) -> application.flushLoggerOutput());
-		application.addComponentMenuElement(Logger.class, "Fine level", (ActionEvent e) -> logger.setLevel(Level.FINE));
-		application.addComponentMenuElement(Logger.class, "Info level", (ActionEvent e) -> logger.setLevel(Level.INFO));
-		application.addComponentMenuElement(Logger.class, "Warning level",
-				(ActionEvent e) -> logger.setLevel(Level.WARNING));
-		application.addComponentMenuElement(Logger.class, "Severe level",
-				(ActionEvent e) -> logger.setLevel(Level.SEVERE));
-		application.addComponentMenuElement(Logger.class, "OFF logging", (ActionEvent e) -> logger.setLevel(Level.OFF));
-	}
+        Job2dDriver abstractDriverAdapter = new AbstractDriverAdapter();
+        DriverFeature.addDriver("Jane Simulator", abstractDriverAdapter);
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+        DriverFeature.updateDriverInfo();
+    }
 
-			@Override
-			public void run() {
-				Application app = new Application("2d jobs Visio");
-				DrawerFeature.setupDrawerPlugin(app);
-				setupDefaultDrawerVisibilityManagement(app);
+    /**
+     * Auxiliary routines to enable using Buggy Simulator.
+     *
+     * @param application
+     *            Application context.
+     */
+    private static void setupDefaultDrawerVisibilityManagement(Application application) {
+        DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
+        application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
+                new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
+        defaultDrawerWindow.setVisible(true);
+    }
 
-				DriverFeature.setupDriverPlugin(app);
+    /**
+     * Setup menu for adjusting logging settings.
+     *
+     * @param application
+     *            Application context.
+     */
+    private static void setupLogger(Application application) {
+        application.addComponentMenu(Logger.class, "Logger", 0);
+        application.addComponentMenuElement(Logger.class, "Clear log", (ActionEvent e) -> application.flushLoggerOutput());
+        application.addComponentMenuElement(Logger.class, "Fine level", (ActionEvent e) -> logger.setLevel(Level.FINE));
+        application.addComponentMenuElement(Logger.class, "Info level", (ActionEvent e) -> logger.setLevel(Level.INFO));
+        application.addComponentMenuElement(Logger.class, "Warning level", (ActionEvent e) -> logger.setLevel(Level.WARNING));
+        application.addComponentMenuElement(Logger.class, "Severe level", (ActionEvent e) -> logger.setLevel(Level.SEVERE));
+        application.addComponentMenuElement(Logger.class, "OFF logging", (ActionEvent e) -> logger.setLevel(Level.OFF));
+    }
 
-				setupDrivers(app);
-				setupPresetTests(app);
-				setupLogger(app);
+    /**
+     * Launch the application.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
 
-				app.setVisibility(true);
-			}
-		});
-	}
+            @Override
+            public void run() {
+                Application app = new Application("2d jobs Visio");
+                DrawerFeature.setupDrawerPlugin(app);
+                setupDefaultDrawerVisibilityManagement(app);
+
+                DriverFeature.setupDriverPlugin(app);
+
+                setupDrivers(app);
+                setupPresetTests(app);
+                setupLogger(app);
+
+                app.setVisibility(true);
+            }
+        });
+    }
 
 }
