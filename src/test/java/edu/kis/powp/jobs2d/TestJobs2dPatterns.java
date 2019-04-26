@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,6 +9,7 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.events.CommandFigure;
+import edu.kis.powp.jobs2d.events.RectangleFigure;
 import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -30,10 +31,12 @@ public class TestJobs2dPatterns {
                 DriverFeature.getDriverManager());
 
 		CommandFigure commandFigure = new CommandFigure();
+		RectangleFigure rectangleFigure= new RectangleFigure();
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectSecondTestFigureOptionListener);
 		application.addTest("Command", commandFigure);
+		application.addTest("Rectangle Command", rectangleFigure);
 	}
 
 	/**
@@ -91,7 +94,6 @@ public class TestJobs2dPatterns {
 			public void run() {
 				Application app = new Application("2d jobs Visio");
 				DrawerFeature.setupDrawerPlugin(app);
-//				setupDefaultDrawerVisibilityManagement(app);
 
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);

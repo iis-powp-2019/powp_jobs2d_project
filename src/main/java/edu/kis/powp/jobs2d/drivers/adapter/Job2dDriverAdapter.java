@@ -8,7 +8,7 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 public class Job2dDriverAdapter implements Job2dDriver {
     private int startX = 0, startY = 0;
     private ILine line;
-    DrawPanelController controller;
+    private DrawPanelController controller;
 
     public Job2dDriverAdapter(ILine line, DrawPanelController controller) {
         this.line = line;
