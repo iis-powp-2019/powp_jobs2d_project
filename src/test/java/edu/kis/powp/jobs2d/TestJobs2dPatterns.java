@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import command.Prostokat;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
@@ -30,6 +31,9 @@ public class TestJobs2dPatterns {
 
 		SelectDriverMenuOptionListnerForSecondExample selectDriverMenuOptionListnerForSecondExample =new SelectDriverMenuOptionListnerForSecondExample(DriverFeature.getDriverManager());
 		application.addTest("Figure Joe 2", selectDriverMenuOptionListnerForSecondExample);
+
+		Prostokat prostokat=new Prostokat((DriverFeature.getDriverManager()));
+		application.addTest("Prostokat",prostokat);
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 	}
 
