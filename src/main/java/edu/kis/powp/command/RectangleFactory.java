@@ -7,8 +7,10 @@ public class RectangleFactory {
     public static ComplexCommand createRectangle(DriverManager driverManager) {
         ComplexCommand complex = new ComplexCommand();
 
-        DriverCommand driverCommand = new OperateToCommand(driverManager.getCurrentDriver(), 0, 50);
-        complex.addCommand(driverCommand);
+        DriverCommand driverCommand0 = new SetPositionCommand(driverManager.getCurrentDriver(), 0, 0);
+        complex.addCommand(driverCommand0);
+        DriverCommand driverCommand1 = new OperateToCommand(driverManager.getCurrentDriver(), 0, 50);
+        complex.addCommand(driverCommand1);
         DriverCommand driverCommand2 = new OperateToCommand(driverManager.getCurrentDriver(), 50, 50);
         complex.addCommand(driverCommand2);
         DriverCommand driverCommand4 = new OperateToCommand(driverManager.getCurrentDriver(), 50, 0);

@@ -13,7 +13,8 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectCommandTestOptionListener;
+import edu.kis.powp.jobs2d.events.SelectCommandCyrcleTestOptionListener;
+import edu.kis.powp.jobs2d.events.SelectCommandRectangleTestOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -46,10 +47,15 @@ public class TestJobs2dPatterns {
 
         application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 
-        SelectCommandTestOptionListener selectCommandTestOptionListener = new SelectCommandTestOptionListener(
+        SelectCommandRectangleTestOptionListener selectCommandRectangleTestOptionListener = new SelectCommandRectangleTestOptionListener(
                 DriverFeature.getDriverManager());
 
-        application.addTest("Figure Command", selectCommandTestOptionListener);
+        application.addTest("Rectangle Command", selectCommandRectangleTestOptionListener);
+
+        SelectCommandCyrcleTestOptionListener selectCommandCyrcleTestOptionListener = new SelectCommandCyrcleTestOptionListener(
+                DriverFeature.getDriverManager());
+
+        application.addTest("Rectangle Command", selectCommandCyrcleTestOptionListener);
     }
 
     /**
