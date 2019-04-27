@@ -12,14 +12,24 @@ public class ShapeFactory {
         job2dDriver = driver;
     }
 
-    public void drawCircle(int x, int y ,int radius, int points){
+    public DriverCommand drawCircle(int x, int y ,int radius, int points){
 
         List<DriverCommand> listOfCommands = new ArrayList<>();
         int x_start = x;
         int y_start = y + radius;
-        double intern_angle = 360 / points;
-        listOfCommands.add(new SetPositionCommand(x,y +radius,job2dDriver));
+        int tmp_x =0;
+        int tmp_y = 0;
 
+        double intern_angle = Math.PI * 2 / points;
+        double angle = intern_angle;
+        listOfCommands.add(new SetPositionCommand(x_start,y_start,job2dDriver));
+        for(int i =0 ;i<points;i++){
+            tmp_x = (int) ((x_start - x) * Math.cos(angle) -(y_start - y)* Math.sin(angle) + x);
+            tmp_y = (int) ((x_start - x) * Math.sin(angle) +(y_start - y)* Math.cos(angle) + y);
+            listOfCommands.add(new OperateToCommand(tmp_x,tmp_y,job2dDriver));
+            angle += intern_angle;
+        }
+        return new ComplexCommand(listOfCommands);
     }
 
     public DriverCommand createSquare(int left_up_corner_x, int left_up_corner_y, int right_down_corner_x,int right_down_corner_y){

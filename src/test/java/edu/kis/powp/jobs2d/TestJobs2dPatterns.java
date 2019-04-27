@@ -40,9 +40,14 @@ public class TestJobs2dPatterns {
         application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 
         SelectTestFigureOptionListener3 selectTestFigureJaneOptionListener3 = new SelectTestFigureOptionListener3(
-                DriverFeature.getDriverManager());
+				DriverFeature.getDriverManager());
 
-        application.addTest("Figure Square", selectTestFigureJaneOptionListener3);
+		application.addTest("Figure Square", selectTestFigureJaneOptionListener3);
+
+		SelectTestFigureOptionListener4 SelectTestFigureOptionListener4 = new SelectTestFigureOptionListener4(
+				DriverFeature.getDriverManager());
+
+		application.addTest("Figure Circle", SelectTestFigureOptionListener4);
 	}
 
 	/**
