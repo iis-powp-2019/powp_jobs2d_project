@@ -1,7 +1,11 @@
 package edu.kis.powp.jobs2d.drivers.adapter;
 
+import java.awt.Color;
+
 import edu.kis.legacy.drawer.shape.ILine;
+import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
+import edu.kis.powp.jobs2d.drivers.factory.LineCustomizable;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 /**
@@ -9,10 +13,12 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
  */
 public class LineDrawerAdapter implements Job2dDriver {
     private int startX = 0, startY = 0;
-    private ILine line;
+    private ILine customizableLine;
 
     public LineDrawerAdapter(ILine line) {
-        this.line = line;
+    	super();
+        customizableLine=LineFactory.getBasicLine();
+        setCustomizableLine(Color.CYAN, 5, true);
     }
 
     @Override
@@ -23,9 +29,15 @@ public class LineDrawerAdapter implements Job2dDriver {
 
     @Override
     public void operateTo(int x, int y) {
-        line.setStartCoordinates(this.startX, this.startY);
-        line.setEndCoordinates(x, y);
+        customizableLine.setStartCoordinates(this.startX, this.startY);
+        customizableLine.setEndCoordinates(x, y);
         setPosition(x,y);
-        DrawerFeature.getDrawerController().drawLine(line);
+        DrawerFeature.getDrawerController().drawLine(customizableLine);
+    }
+    
+
+    public void setCustomizableLine(Color color, float thick, boolean dot)
+    {
+        customizableLine=new LineCustomizable(color,thick,dot);
     }
 }
