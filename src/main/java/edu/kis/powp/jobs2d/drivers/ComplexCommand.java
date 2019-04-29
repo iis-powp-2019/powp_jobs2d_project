@@ -19,3 +19,5 @@ public class ComplexCommand implements DriverCommand
 		}
 	}
 }
+
+//Wzorzec Composite
