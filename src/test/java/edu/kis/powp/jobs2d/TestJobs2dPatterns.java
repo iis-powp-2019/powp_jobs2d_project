@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureSecondOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -42,6 +43,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver testDriver = new Job2dAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
+
+        Job2dDriver specialLineDriver = new LineDrawerAdapter();
+        DriverFeature.addDriver("Special Line Simulator", specialLineDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
