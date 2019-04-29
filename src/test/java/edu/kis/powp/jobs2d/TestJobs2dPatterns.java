@@ -63,10 +63,6 @@ public class TestJobs2dPatterns {
 		Job2dDriver abstractAdapter = new AbstractDriverAdapter();
 		DriverFeature.addDriver("Abstract Simulator", abstractAdapter);
 
-		//Job2dDriver commandAdapter = new OpareteToCommand(new AbstractDriverAdapter());
-		//DriverFeature.addDriver("Abstract Simulator", abstractAdapter);
-
-
 		DriverFeature.updateDriverInfo();
 	}
 
