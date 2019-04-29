@@ -11,6 +11,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.command.OpareteToCommand;
 import edu.kis.powp.jobs2d.events.JaneFigure;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -61,6 +62,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver abstractAdapter = new AbstractDriverAdapter();
 		DriverFeature.addDriver("Abstract Simulator", abstractAdapter);
+
+		//Job2dDriver commandAdapter = new OpareteToCommand(new AbstractDriverAdapter());
+		//DriverFeature.addDriver("Abstract Simulator", abstractAdapter);
 
 
 		DriverFeature.updateDriverInfo();

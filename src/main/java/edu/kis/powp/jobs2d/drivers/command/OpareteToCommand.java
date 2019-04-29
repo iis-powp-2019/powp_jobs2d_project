@@ -3,10 +3,10 @@ package edu.kis.powp.jobs2d.drivers.command;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
 public class OpareteToCommand implements DriverCommand {
-    int x=0,y=0;
+    private int x,y;
     Job2dDriver driver;
 
-    public OpareteToCommand(int x, int y, Job2dDriver driver) {
+    public OpareteToCommand(Job2dDriver driver,int x, int y ) {
         this.x = x;
         this.y = y;
         this.driver = driver;
@@ -17,11 +17,8 @@ public class OpareteToCommand implements DriverCommand {
         driver.operateTo(x,y);
     }
 
-    public void setX(int x) {
+    public void coordinates(int x, int y) {
         this.x = x;
-    }
-
-    public void setY(int y) {
         this.y = y;
     }
 }
