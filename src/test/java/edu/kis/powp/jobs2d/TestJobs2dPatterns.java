@@ -41,7 +41,7 @@ public class TestJobs2dPatterns {
 	 */
 	private static void setupDrivers(Application application) {
 		Job2dDriver loggerDriver = new LoggerDriver();
-		DriverFeature.addDriver("Logger Driver", loggerDriver);
+		DriverFeature.addDriver("Logger DriverCommand", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 
 		Job2dDriver lineDrawerAdapter = new LineDrawerAdapter();
