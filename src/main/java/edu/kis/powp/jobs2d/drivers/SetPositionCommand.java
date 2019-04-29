@@ -6,19 +6,19 @@ public class SetPositionCommand implements DriverCommand
 {    
 	private int x;
 	private int y;
+    private Job2dDriver driver;
 
-	public SetPositionCommand(int x, int y) 
+	public SetPositionCommand(int x, int y, Job2dDriver d) 
 	{
 	    this.setX(x);
 	    this.setY(y);
+	    this.driver = d;
 	}
 	
     @Override
     public void execute() 
     {
-        DriverManager driverManager = new DriverManager();
-        Job2dDriver job2dDriver = driverManager.getCurrentDriver();
-        job2dDriver.setPosition(getX(), getY());
+        driver.setPosition(getX(), getY());
     }
 
 	public int getX() {
