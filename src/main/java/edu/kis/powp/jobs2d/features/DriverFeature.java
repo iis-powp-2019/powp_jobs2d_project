@@ -3,7 +3,7 @@ package edu.kis.powp.jobs2d.features;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
-import edu.kis.powp.jobs2d.drivers.SelectDriverMenuOptionListener;
+import edu.kis.powp.jobs2d.events.SelectDriverMenuOptionListener;
 
 public class DriverFeature {
 
