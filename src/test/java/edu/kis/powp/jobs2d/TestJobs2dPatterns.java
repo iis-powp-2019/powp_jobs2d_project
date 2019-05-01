@@ -15,6 +15,7 @@ import edu.kis.powp.jobs2d.Command.ComplexCommand;
 import edu.kis.powp.jobs2d.Command.DriverCommand;
 import edu.kis.powp.jobs2d.Command.OperateToCommand;
 import edu.kis.powp.jobs2d.Command.SetPositionCommand;
+import edu.kis.powp.jobs2d.drivers.SelectCommandFactoryMenuOptionListener;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPaneControllerToJob2dDriverAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -53,7 +54,11 @@ public class TestJobs2dPatterns {
 				ComplexCommand complexCommand = new ComplexCommand(commands);
 				complexCommand.execute();
 			}
+
 		});
+		application.addTest("Triangle", new SelectCommandFactoryMenuOptionListener(DriverFeature.getDriverManager(),"triangle"));
+		application.addTest("Square", new SelectCommandFactoryMenuOptionListener(DriverFeature.getDriverManager(),"square"));
+		application.addTest("Rectangle", new SelectCommandFactoryMenuOptionListener(DriverFeature.getDriverManager(),"rectangle"));
 	}
 
 	/**
@@ -73,7 +78,7 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Driver for dotted line", dottedLineDriver);
 
 		Job2dDriver specialLineDriver = new LineDrawerAdapter(LineFactory.getSpecialLine());
-		DriverFeature.addDriver("Driver for dotted line", specialLineDriver);
+		DriverFeature.addDriver("Driver for special line", specialLineDriver);
 
 		Job2dDriver lineWithParametersDriver = new LineDrawerAdapter(new LineWithParameters(Color.red, 4, true));
 		DriverFeature.addDriver("Driver for line with parameters", lineWithParametersDriver);
