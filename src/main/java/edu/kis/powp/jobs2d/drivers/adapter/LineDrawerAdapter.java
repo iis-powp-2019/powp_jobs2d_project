@@ -13,7 +13,7 @@ public class LineDrawerAdapter implements Job2dDriver {
     private ILine iLine;
 
     public LineDrawerAdapter(DrawPanelController drawPanelController){
-        new LineDrawerAdapter(drawPanelController, LineFactory.getBasicLine());
+        this(drawPanelController, LineFactory.getBasicLine());
     }
 
     public LineDrawerAdapter(DrawPanelController drawPanelController, ILine iLine){
