@@ -22,6 +22,6 @@ public class FiguresJaneDriver extends AbstractDriver {
 
 	@Override
 	public String toString() {
-		return "@Q!$!FiguresJaneDriver@&Q(%^*#@";
+		return "FiguresJaneDriver";
 	}
 }
