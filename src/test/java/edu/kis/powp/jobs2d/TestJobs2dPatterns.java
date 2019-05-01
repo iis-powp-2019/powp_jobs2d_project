@@ -51,13 +51,13 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
 
-		LineDrawerAdapter lineDrawerAdapterWithBasicLine = new LineDrawerAdapter(DrawerFeature.getDrawerController());
+		Job2dDriver lineDrawerAdapterWithBasicLine = new LineDrawerAdapter(DrawerFeature.getDrawerController());
 		DriverFeature.addDriver("Line Drawer Adapter (BasicLine)", lineDrawerAdapterWithBasicLine);
 
-		LineDrawerAdapter lineDrawerAdapterWithDottedLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
+		Job2dDriver lineDrawerAdapterWithDottedLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(), LineFactory.getDottedLine());
 		DriverFeature.addDriver("Line Drawer Adapter (DottedLine)", lineDrawerAdapterWithDottedLine);
 
-		LineDrawerAdapter lineDrawerAdapterWithSpecialLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
+		Job2dDriver lineDrawerAdapterWithSpecialLine = new LineDrawerAdapter(DrawerFeature.getDrawerController(), LineFactory.getSpecialLine());
 		DriverFeature.addDriver("Line Drawer Adapter (SpecialLine)", lineDrawerAdapterWithSpecialLine);
 
 		DriverFeature.updateDriverInfo();
