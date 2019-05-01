@@ -16,13 +16,21 @@ public class FigureFactory {
 
     public static DriverCommand getCircle(DriverManager driverManager) {
         ComplexCommand complex = new ComplexCommand();
-        complex.addCommand(new SetPositionCommand(driverManager.getCurrentDriver(), -10, 10));
-        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 10, 10));
-        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 10, 10));
-        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 10, -10));
-        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), -10, 10));
-        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), -10, -10));
-        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 10, -10));
+    
+
+        double step = (2*Math.PI/20);  
+    
+        int r = 50;
+
+        complex.addCommand(new SetPositionCommand(driverManager.getCurrentDriver(),r, 0));
+        for(double theta=0;  theta < 2*Math.PI;  theta+=step)
+         { int x = (int) ( r*Math.cos(theta));
+           int y = (int) ( r*Math.sin(theta));   
+           complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), x, y));
+
+         }
+        complex.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), r, 0));
+      
         return complex;
     }
 }

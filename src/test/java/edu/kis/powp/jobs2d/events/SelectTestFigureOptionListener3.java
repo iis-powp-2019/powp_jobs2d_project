@@ -19,7 +19,7 @@ public class SelectTestFigureOptionListener3 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         ComplexCommand complex = new ComplexCommand();
-        FigureFactory.getSquare(driverManager)
+        FigureFactory.getCircle(driverManager)
                      .execute();
 
     }
