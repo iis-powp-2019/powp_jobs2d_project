@@ -1,5 +1,6 @@
 package edu.kis.powp.jobs2d;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
@@ -9,6 +10,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.ConfigurableLine;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -53,6 +55,9 @@ public class TestJobs2dPatterns {
 		
 		Job2dDriver testDriver3 = new LineDrawerAdapter(LineFactory.getDottedLine());
 		DriverFeature.addDriver("Dotted Line", testDriver3);
+		
+		Job2dDriver testDriver4 = new LineDrawerAdapter(new ConfigurableLine(Color.RED, 9.0f, false));
+		DriverFeature.addDriver("Configurable Line test", testDriver4);
 
 		DriverFeature.updateDriverInfo();
 	}
