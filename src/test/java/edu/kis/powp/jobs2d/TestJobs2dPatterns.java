@@ -38,11 +38,14 @@ public class TestJobs2dPatterns {
 
 		SelectTestHexagonOptionListener selectTestHexagonOptionListener = new SelectTestHexagonOptionListener(DriverFeature.getDriverManager());
 
+		SelectTestTrapeziumOptionListener selectTestTrapeziumOptionListener = new SelectTestTrapeziumOptionListener(DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
 		application.addTest("Rectangle",selectTestRectangleOptionListener);
 		application.addTest("Hexagon",selectTestHexagonOptionListener);
+		application.addTest("Trapezium",selectTestTrapeziumOptionListener);
 	}
 
 	/**

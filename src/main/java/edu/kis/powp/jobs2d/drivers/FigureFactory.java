@@ -36,5 +36,17 @@ public class FigureFactory {
         return new ComplexCommand(commandList);
     }
 
+    public static DriverCommand trapeziumFactory(DriverManager driverManager){
+        List<DriverCommand> commandList = new ArrayList<>();
+
+        commandList.add(new SetPositionCommand(driverManager.getCurrentDriver(),0,0));
+        commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),200,0));
+        commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),140,80));
+        commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),60,80));
+        commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),0,0));
+
+        return new ComplexCommand(commandList);
+    }
+
 
 }
