@@ -11,6 +11,12 @@ public class OperateToCommand implements DriverCommand{
         this.driver = driver;
     }
 
+    public OperateToCommand(Integer x, Integer y, Job2dDriver driver) {
+        this.x = x;
+        this.y = y;
+        this.driver = driver;
+    }
+
     public void setCoordinates(int x, int y){
         this.x = x;
         this.y = x;
