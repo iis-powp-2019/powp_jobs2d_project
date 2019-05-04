@@ -6,15 +6,12 @@ import java.awt.event.ActionListener;
 import edu.kis.powp.command.ComplexCommand;
 import edu.kis.powp.command.DriverCommand;
 import edu.kis.powp.command.OperateToCommand;
-import edu.kis.powp.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
-import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
-
-public class DriverCommandTestOptionListener implements ActionListener {
+public class SelectDriverCommandTestOptionListener implements ActionListener {
 
     private DriverManager driverManager;
 
-    public DriverCommandTestOptionListener(DriverManager driverManager) {
+    public SelectDriverCommandTestOptionListener(DriverManager driverManager) {
         this.driverManager = driverManager;
     }
 

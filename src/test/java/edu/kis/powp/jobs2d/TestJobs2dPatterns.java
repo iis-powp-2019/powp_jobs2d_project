@@ -12,8 +12,10 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.DriverCommandTestOptionListener;
+import edu.kis.powp.jobs2d.events.SelectDriverCommandTestOptionListener;
+import edu.kis.powp.jobs2d.events.SelectRectangleFactoryTestOptionListener;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectCircleFactoryTestOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
@@ -33,21 +35,31 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
-		
+
 		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
-	                DriverFeature.getDriverManager());
+				DriverFeature.getDriverManager());
 
-	     application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
-	     
-	     SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
-	                DriverFeature.getDriverManager());
+		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 
-	     application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
-	     
-	     DriverCommandTestOptionListener selectCommandTestOptionListener = new DriverCommandTestOptionListener(
-	                DriverFeature.getDriverManager());
+		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(
+				DriverFeature.getDriverManager());
 
-	        application.addTest("Figure Command", selectCommandTestOptionListener);
+		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
+
+		SelectDriverCommandTestOptionListener selectCommandTestOptionListener = new SelectDriverCommandTestOptionListener(
+				DriverFeature.getDriverManager());
+
+		application.addTest("Figure Command", selectCommandTestOptionListener);
+
+		SelectRectangleFactoryTestOptionListener selectRectangleFactoryOptionListener = new SelectRectangleFactoryTestOptionListener(
+				DriverFeature.getDriverManager());
+
+		application.addTest("Rectangle Factory", selectRectangleFactoryOptionListener);
+		
+		SelectCircleFactoryTestOptionListener selectCircleFactoryOptionListener = new SelectCircleFactoryTestOptionListener(
+				DriverFeature.getDriverManager());
+
+		application.addTest("Circle Factory", selectCircleFactoryOptionListener);
 	}
 
 	/**
@@ -62,19 +74,19 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver testDriver = new DrawerAdapter();
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
-		
+
 		Job2dDriver testDriver2 = new LineDrawerAdapter(LineFactory.getDottedLine());
 		DriverFeature.addDriver("DottedLine Simulator", testDriver2);
-		
+
 		Job2dDriver testDriver3 = new LineDrawerAdapter(LineFactory.getSpecialLine());
 		DriverFeature.addDriver("SpecialLine Simulator", testDriver3);
-		
-		Job2dDriver testDriver4 = new LineDrawerAdapter(new MyILine(Color.BLUE, 40, false));
-        DriverFeature.addDriver("MyLine Simulator", testDriver4);
 
-        Job2dDriver testDriver5 = new FiguresJaneDriver(0, 0, new MyILine(Color.PINK, 10, false));
-        DriverFeature.addDriver("Jane Simulator", testDriver5);
-        
+		Job2dDriver testDriver4 = new LineDrawerAdapter(new MyILine(Color.BLUE, 40, false));
+		DriverFeature.addDriver("MyLine Simulator", testDriver4);
+
+		Job2dDriver testDriver5 = new FiguresJaneDriver(0, 0, new MyILine(Color.PINK, 10, false));
+		DriverFeature.addDriver("Jane Simulator", testDriver5);
+
 		DriverFeature.updateDriverInfo();
 	}
 
