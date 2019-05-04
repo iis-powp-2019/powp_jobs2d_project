@@ -34,10 +34,19 @@ public class TestJobs2dPatterns {
 	 */
 	private static void setupPresetTests(Application application) {
 		SelectTestFigureOptionListener selectTestFigureOptionListener1 = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager(), 1);
+				DriverFeature.getDriverManager(), "Figure Joe 1");
 
         SelectTestFigureOptionListener selectTestFigureOptionListener2 = new SelectTestFigureOptionListener(
-                DriverFeature.getDriverManager(), 2);
+                DriverFeature.getDriverManager(), "Figure Joe 2");
+
+		SelectTestFigureOptionListener selectTestFigureOptionListenerSquare = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), "Square");
+
+		SelectTestFigureOptionListener selectTestFigureOptionListenerRectangle = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), "Rectangle");
+
+		SelectTestFigureOptionListener selectTestFigureOptionListenerTriangle = new SelectTestFigureOptionListener(
+				DriverFeature.getDriverManager(), "Triangle");
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener1);
         application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
@@ -56,6 +65,9 @@ public class TestJobs2dPatterns {
 		        complexCommand.execute();
 	        }
         });
+        application.addTest("Square", selectTestFigureOptionListenerSquare);
+		application.addTest("Rectangle", selectTestFigureOptionListenerRectangle);
+		application.addTest("Triangle", selectTestFigureOptionListenerTriangle);
 	}
 
 	/**
