@@ -21,8 +21,6 @@ public class CommandFigureFactory {
 
         for(int i = 0; i < positions.length; i += 2)
         {
-            System.out.println(positions[i]);
-            System.out.println(positions[i+1]);
             command.addCommand(new OperateToCommand(positions[i], positions[i+1], driverManager.getCurrentDriver()));
         }
 
