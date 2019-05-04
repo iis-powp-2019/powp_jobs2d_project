@@ -22,6 +22,8 @@ public class ComplexCommandFactory implements AbstractCommandFactory {
                 return new Square();
             case "rect":
                 return new Rectangle();
+            case "triangle":
+                return new Triangle();
         }
         return null;
     }
@@ -46,6 +48,17 @@ public class ComplexCommandFactory implements AbstractCommandFactory {
             com.add(new SetPositionCommand(0, 0, job2dDriver));
             com.add(new OperateToCommand(0, -100, job2dDriver));
             com.add(new OperateToCommand(200, -100, job2dDriver));
+            com.add(new OperateToCommand(200, 0, job2dDriver));
+            com.add(new OperateToCommand(0, 0, job2dDriver));
+        }
+    }
+
+    class Triangle extends ComplexCommand {
+
+        public Triangle() {
+            super(com);
+            com.add(new SetPositionCommand(0, 0, job2dDriver));
+            com.add(new OperateToCommand(100, 200, job2dDriver));
             com.add(new OperateToCommand(200, 0, job2dDriver));
             com.add(new OperateToCommand(0, 0, job2dDriver));
         }

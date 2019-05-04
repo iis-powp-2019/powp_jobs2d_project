@@ -22,7 +22,7 @@ public class Job2dDriverTest {
 		FiguresJane.figureScript(abstractDriver);
 	}
 
-	private static class StubDriver implements Job2dDriver {
+	 static class StubDriver implements Job2dDriver {
 
 		@Override
 		public void operateTo(int x, int y) {
@@ -34,4 +34,5 @@ public class Job2dDriverTest {
 			System.out.println("Driver setPosition action...");
 		}
 	};
+
 }
