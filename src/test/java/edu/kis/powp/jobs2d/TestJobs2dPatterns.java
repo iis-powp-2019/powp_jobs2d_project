@@ -36,10 +36,22 @@ public class TestJobs2dPatterns {
 		SelectCommandOprionListener selectCommandOprionListener = new SelectCommandOprionListener(
 				DriverFeature.getDriverManager());
 
+		SelectCommandSquare selectCommandSquare = new SelectCommandSquare(
+				DriverFeature.getDriverManager());
+
+		SelectCommandTriangle selectCommandTriangle = new SelectCommandTriangle(
+				DriverFeature.getDriverManager());
+
+		SelectCommandCircle selectCommandCircle = new SelectCommandCircle(
+				DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
-		application.addTest("Command", selectCommandOprionListener);
+		application.addTest("Command Test", selectCommandOprionListener);
+		application.addTest("Command Square", selectCommandSquare);
+		application.addTest("Command Triangle", selectCommandTriangle);
+		application.addTest("Command Circle", selectCommandCircle);
 	}
 
 	/**

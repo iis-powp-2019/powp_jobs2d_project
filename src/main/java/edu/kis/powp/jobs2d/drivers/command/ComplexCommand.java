@@ -9,8 +9,9 @@ public class ComplexCommand implements DriverCommand {
 
     private List<DriverCommand> commands = new ArrayList<>();
 
-    public void addCommand(DriverCommand command){
+    public DriverCommand addCommand(DriverCommand command){
         commands.add(command);
+        return this;
     }
 
     @Override
