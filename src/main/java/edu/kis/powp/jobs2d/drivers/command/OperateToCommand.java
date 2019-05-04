@@ -19,7 +19,7 @@ public class OperateToCommand implements DriverCommand{
 
     public void setCoordinates(int x, int y){
         this.x = x;
-        this.y = x;
+        this.y = y;
     }
 
     @Override
