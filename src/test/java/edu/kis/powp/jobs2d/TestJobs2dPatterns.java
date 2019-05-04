@@ -45,6 +45,9 @@ public class TestJobs2dPatterns {
 		SelectCommandCircle selectCommandCircle = new SelectCommandCircle(
 				DriverFeature.getDriverManager());
 
+		SelectJoeFigureCommand selectJoeFigureCommand = new SelectJoeFigureCommand(
+		        DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
@@ -52,6 +55,7 @@ public class TestJobs2dPatterns {
 		application.addTest("Command Square", selectCommandSquare);
 		application.addTest("Command Triangle", selectCommandTriangle);
 		application.addTest("Command Circle", selectCommandCircle);
+        application.addTest("Command Joe", selectJoeFigureCommand);
 	}
 
 	/**
