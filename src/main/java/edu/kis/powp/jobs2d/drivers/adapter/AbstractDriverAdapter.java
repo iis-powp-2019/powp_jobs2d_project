@@ -6,9 +6,11 @@ import edu.kis.powp.jobs2d.AbstractDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 public class AbstractDriverAdapter extends AbstractDriver {
+    private ILine line;
 
-    public AbstractDriverAdapter(int x, int y) {
+    public AbstractDriverAdapter(int x, int y, ILine line) {
         super(x, y);
+        this.line = line;
     }
 
     @Override public void operateTo(int i, int i1) {
@@ -18,5 +20,10 @@ public class AbstractDriverAdapter extends AbstractDriver {
 
         DrawerFeature.getDrawerController().drawLine(line);
         setPosition(i,i1);
+        DrawerFeature.getDrawerController().drawLine(line);
+    }
+
+    @Override public String toString() {
+        return "AbstractDriverAdapter{" + "line=" + line + '}';
     }
 }
