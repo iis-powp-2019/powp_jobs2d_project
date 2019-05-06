@@ -5,6 +5,8 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
+import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+
 
 import java.util.ArrayList;
 
@@ -24,10 +26,11 @@ public class TestCommand {
 
     private void test(){
         int x=1,y=1;
-        commandQueue.add(new SetPositionCommand(x,y));
-        commandQueue.add(new SetPositionCommand(x,y));
-        commandQueue.add(new SetPositionCommand(x,y));
-        commandQueue.add(new OperateToCommand(x,y));
+        Job2dDriver job2dDriver=new LineDrawerAdapter();
+        commandQueue.add(new SetPositionCommand(x,y,job2dDriver));
+        commandQueue.add(new SetPositionCommand(x,y,job2dDriver));
+        commandQueue.add(new SetPositionCommand(x,y,job2dDriver));
+        commandQueue.add(new OperateToCommand(x,y,job2dDriver));
 
         for (DriverCommand command : commandQueue){
             if (command instanceof DriverCommand){

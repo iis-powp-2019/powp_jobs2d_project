@@ -5,12 +5,12 @@ import edu.kis.powp.jobs2d.drivers.adapter.DrawAdapter;
 
 public class OperateToCommand implements DriverCommand {
     private int x,y;
-    private Job2dDriver jobs2ddriver= new DrawAdapter();
+    private Job2dDriver jobs2ddriver;
 
-    public OperateToCommand(int x,int y){
+    public OperateToCommand(int x,int y, Job2dDriver jobs2ddriver){
         this.x=x;
         this.y=y;
-
+        this.jobs2ddriver=jobs2ddriver;
     }
 
     @Override
