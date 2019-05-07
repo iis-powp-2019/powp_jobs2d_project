@@ -8,8 +8,8 @@ public class CustomLine extends AbstractLine {
 
     public CustomLine(Color _color, boolean _dotted, float _thickness) {
         super();
-        super.color = _color;
-        super.dotted = _dotted;
-        super.thickness = _thickness;
+        this.color = _color;
+        this.dotted = _dotted;
+        this.thickness = _thickness;
     }
 }
