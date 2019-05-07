@@ -54,7 +54,7 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Logger Driver", loggerDriver);
 		DriverFeature.getDriverManager().setCurrentDriver(loggerDriver);
 		
-		Job2dDriver testCustomLineDriver = new LineDrawerAdapter(new CustomLine(Color.RED, true, 20));
+		Job2dDriver testCustomLineDriver = new LineDrawerAdapter(new CustomLine(Color.RED, true, 20.0f));
         DriverFeature.addDriver("Custom line dotted", testCustomLineDriver);
 
 		Job2dDriver testDriver = new DrawAdapter( );
@@ -66,7 +66,7 @@ public class TestJobs2dPatterns {
 		Job2dDriver testDottedDriver = new LineDrawerAdapter(LineFactory.getDottedLine());
 		DriverFeature.addDriver("Dotted Line", testDottedDriver);
 
-        Job2dDriver testJaneDriver = new FiguresJaneDriver(0, 0, new CustomLine(Color.RED, true, 10));
+        Job2dDriver testJaneDriver = new FiguresJaneDriver(0, 0, new CustomLine(Color.RED, true, 10.0f));
         DriverFeature.addDriver("Jane Simulator", testJaneDriver);
 
 		DriverFeature.updateDriverInfo();
