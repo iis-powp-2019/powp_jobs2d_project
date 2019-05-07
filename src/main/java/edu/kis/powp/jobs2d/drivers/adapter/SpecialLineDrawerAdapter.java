@@ -34,6 +34,6 @@ public class SpecialLineDrawerAdapter extends DrawPanelController implements Job
 
     @Override
     public String toString() {
-        return "@Q!$!@$!#@$(*#@&Q(%^*#@";
+        return "Special Line";
     }
 }
