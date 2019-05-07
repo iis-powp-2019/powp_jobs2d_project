@@ -8,6 +8,11 @@ public class ComplexCommand {
     public ComplexCommand(ArrayList<DriverCommand> commandQueue) {
         this.commandQueue = commandQueue;
     }
+
+    public ComplexCommand() {
+        commandQueue=new ArrayList<>();
+    }
+
     public void execute()
     {
         for (DriverCommand command : commandQueue){
