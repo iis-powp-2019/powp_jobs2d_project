@@ -7,9 +7,11 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 public class LineDrawerAdapter extends DrawerFeature implements Job2dDriver {
 	private int startX = 0, startY = 0;
-
-	public LineDrawerAdapter() {
+	private ILine line;
+	
+	public LineDrawerAdapter(ILine _line) {
 		super();
+		this.line = _line;
 	}
 	
 	@Override
