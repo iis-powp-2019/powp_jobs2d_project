@@ -15,6 +15,7 @@ import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener3;
+import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener4;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -38,11 +39,16 @@ public class TestJobs2dPatterns {
         SelectTestFigureOptionListener3 selectTestFigureOptionListener3 = new SelectTestFigureOptionListener3(
                 DriverFeature.getDriverManager());
 
+        SelectTestFigureOptionListener4 selectTestFigureOptionListener4 = new SelectTestFigureOptionListener4(
+                DriverFeature.getDriverManager());
+
         application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 
         application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
 
         application.addTest("Figure Joe 3", selectTestFigureOptionListener3);
+
+        application.addTest("Figure Joe 4", selectTestFigureOptionListener4);
     }
 
     /**
