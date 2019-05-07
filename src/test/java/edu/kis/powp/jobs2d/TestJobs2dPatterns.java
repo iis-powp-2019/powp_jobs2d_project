@@ -29,11 +29,17 @@ public class TestJobs2dPatterns {
 		SelectTestFigure2OptionListener selectTestFigure2OptionListener = new SelectTestFigure2OptionListener(DriverFeature.getDriverManager());
 		SelectTestFigureJaneOptionListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneOptionListener(DriverFeature.getDriverManager());
 		SelectCommandTestOptionListener selectCommandTestOptionListener = new SelectCommandTestOptionListener(DriverFeature.getDriverManager());
+		SelectCircleFactoryOptionListener selectCircleFactoryOptionListener = new SelectCircleFactoryOptionListener(DriverFeature.getDriverManager());
+		SelectRectangleFactoryOptionListener selectRectangleFactoryOptionListener = new SelectRectangleFactoryOptionListener(DriverFeature.getDriverManager());
+		SelectTriangleFactoryOptionListener selectTriangleFactoryOptionListener = new SelectTriangleFactoryOptionListener(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 		application.addTest("Figure Driver Test", selectCommandTestOptionListener);
+		application.addTest("Circle Factory Test", selectCircleFactoryOptionListener);
+		application.addTest("Rectangle Factory Test", selectRectangleFactoryOptionListener);
+		application.addTest("Triangle Factory Test", selectTriangleFactoryOptionListener);
 	}
 
 	/**
