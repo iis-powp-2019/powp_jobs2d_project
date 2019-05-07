@@ -4,7 +4,6 @@ import edu.kis.powp.command.ComplexCommand;
 import edu.kis.powp.command.DriverCommand;
 import edu.kis.powp.command.OperateToCommand;
 import edu.kis.powp.command.SetPositionCommand;
-import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 import java.util.ArrayList;

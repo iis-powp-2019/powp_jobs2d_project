@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.SelectComplexSquare;
+import edu.kis.powp.jobs2d.drivers.SelectComplexTriangle;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerAdapter;
@@ -36,9 +38,15 @@ public class TestJobs2dPatterns {
         SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(
                 new AbstractAdapter());
 
+		SelectComplexSquare selectComplexSquare = new SelectComplexSquare(DriverFeature.getDriverManager());
+
+		SelectComplexTriangle selectComplexTriangle = new SelectComplexTriangle(DriverFeature.getDriverManager());
+
         application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
-        application.addTest("Figure Jane 1 ",selectTestJaneFigureOptionListener);
+        application.addTest("Figure Jane 1", selectTestJaneFigureOptionListener);
+        application.addTest("Square Command", selectComplexSquare);
+		application.addTest("Triangle Command", selectComplexTriangle);
 	}
 
 	/**
