@@ -13,18 +13,19 @@ public class LineDrawerAdapter  extends DrawPanelController implements Job2dDriv
 
     public LineDrawerAdapter() {
         super();
-    }
-
-    public void useBasicLine(){
         line = LineFactory.getBasicLine();
     }
 
+    public void useBasicLine(){
+        this.line = LineFactory.getBasicLine();
+    }
+
     public void useDottedLine(){
-        line = LineFactory.getDottedLine();
+        this.line = LineFactory.getDottedLine();
     }
 
     public void useSpecialLine(){
-        line = LineFactory.getSpecialLine();
+        this.line = LineFactory.getSpecialLine();
     }
 
     @Override
