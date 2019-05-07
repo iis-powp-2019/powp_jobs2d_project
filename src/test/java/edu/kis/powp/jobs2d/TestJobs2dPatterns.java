@@ -6,6 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import command.Rectangle;
+import command.Square;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
@@ -32,8 +33,10 @@ public class TestJobs2dPatterns {
 
         application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectDrawingSecondFigure);
-		Rectangle prostokat=new Rectangle((DriverFeature.getDriverManager()));
-		application.addTest("Prostokat",prostokat);
+		Rectangle rectangle=new Rectangle((DriverFeature.getDriverManager()));
+		application.addTest("Rectangle",rectangle);
+		Square square=new Square((DriverFeature.getDriverManager()));
+		application.addTest("square",square);
 	}
 
 	/**
