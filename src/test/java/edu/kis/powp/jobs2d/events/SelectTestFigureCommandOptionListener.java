@@ -15,16 +15,14 @@ public class SelectTestFigureCommandOptionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        ComplexCommand complexCommand = new ComplexCommand();
         Random random = new Random();
-        DriverCommand[] driverCommand = new DriverCommand[10];
-        driverCommand[0] = new SetPositionCommand(driverManager.getCurrentDriver(), 0, 0);
+        complexCommand.addCommand(new SetPositionCommand(driverManager.getCurrentDriver(), 0, 0));
 
         for (int i = 1; i < 10; i++) {
-            driverCommand[i] = new OperateToCommand(driverManager.getCurrentDriver(),(random.nextInt(400))-200 , (random.nextInt(400))-200);
+            complexCommand.addCommand( new OperateToCommand(driverManager.getCurrentDriver(),(random.nextInt(400))-200 , (random.nextInt(400))-200));
         }
-
-        for (int i = 0; i < 10; i++) {
-            driverCommand[i].execute();
-        }
+        complexCommand.execute();
     }
+
 }
