@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.function.Consumer;
 
 import edu.kis.powp.jobs2d.Job2dDriver;
+import edu.kis.powp.jobs2d.command.ComplexCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
@@ -24,9 +25,12 @@ public class SelectTestFigureOptionListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		//FiguresJoe.figureScript1(driverManager.getCurrentDriver());
 		//script.accept(driverManager.getCurrentDriver());
-		new SetPositionCommand(-120, -120).execute(driverManager.getCurrentDriver());
-		new OperateToCommand(120, -120).execute(driverManager.getCurrentDriver());
-		new OperateToCommand(60, 60).execute(driverManager.getCurrentDriver());
-		new OperateToCommand(-120, -120).execute(driverManager.getCurrentDriver());
+		new ComplexCommand(
+			new SetPositionCommand(-120, -120),
+			new OperateToCommand(120, -120),
+			new OperateToCommand(60, 60),
+			new OperateToCommand(-120, -120)
+		).execute(driverManager.getCurrentDriver());
+
 	}
 }
