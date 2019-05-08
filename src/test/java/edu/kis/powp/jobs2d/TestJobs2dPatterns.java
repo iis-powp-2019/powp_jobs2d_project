@@ -35,10 +35,13 @@ public class TestJobs2dPatterns {
 
 		SelectTestFigureCommandOptionListener selectCommandTestOptionListener = new SelectTestFigureCommandOptionListener(DriverFeature.getDriverManager());
 
+		SelectSinusFactoryOptionListener selectSinusFactoryOptionListener = new SelectSinusFactoryOptionListener(DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListenerSecond);
 		application.addTest("Figure Jane 1", selectTestFigureJaneOptionListener);
 		application.addTest("Figure Command", selectCommandTestOptionListener);
+		application.addTest("Figure Sinus", selectSinusFactoryOptionListener);
 	}
 
 	/**
