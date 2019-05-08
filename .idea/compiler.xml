@@ -9,5 +9,8 @@
         <module name="jobs2d" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jobs2d" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
