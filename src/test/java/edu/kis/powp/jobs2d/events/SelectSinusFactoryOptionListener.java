@@ -1,7 +1,7 @@
 package edu.kis.powp.jobs2d.events;
 
-import edu.kis.powp.command.ComplexCommand;
-import edu.kis.powp.command.SinusFactory;
+import edu.kis.powp.jobs2d.command.ComplexCommand;
+import edu.kis.powp.jobs2d.command.SinusFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 
 import java.awt.event.ActionEvent;

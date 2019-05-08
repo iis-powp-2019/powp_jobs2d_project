@@ -1,4 +1,4 @@
-package edu.kis.powp.command;
+package edu.kis.powp.jobs2d.command;
 
 public interface DriverCommand {
 
