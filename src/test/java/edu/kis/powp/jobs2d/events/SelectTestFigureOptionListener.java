@@ -11,6 +11,7 @@ import edu.kis.powp.jobs2d.command.ComplexCommand;
 import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
+import edu.kis.powp.jobs2d.command.factory.ComplexCommandFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
@@ -27,15 +28,7 @@ public class SelectTestFigureOptionListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 //		consumer.accept(driverManager.getCurrentDriver());
-		List<DriverCommand> list = new ArrayList<>();
-		list.add(new SetPositionCommand(10, 10, driverManager.getCurrentDriver()));
-		list.add(new OperateToCommand(-10, 10, driverManager.getCurrentDriver()));
-		list.add(new OperateToCommand(-10, -10, driverManager.getCurrentDriver()));
-		list.add(new OperateToCommand(10, -10, driverManager.getCurrentDriver()));
-		list.add(new OperateToCommand(10, 10, driverManager.getCurrentDriver()));
-
-		ComplexCommand complexCommand = new ComplexCommand(list);
+		ComplexCommand complexCommand = ComplexCommandFactory.getRectangle(driverManager.getCurrentDriver());
 		complexCommand.execute();
-
 	}
 }
