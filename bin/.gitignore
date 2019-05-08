@@ -3,3 +3,10 @@
 /.classpath
 /.project
 .settings
+/.gitignore
+/README.md
+/lib/
+/pom.xml
+/powp-lab-adapter.pdf
+/powp-lab-command.pdf
+/src/
