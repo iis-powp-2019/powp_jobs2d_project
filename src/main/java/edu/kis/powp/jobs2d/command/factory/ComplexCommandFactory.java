@@ -13,8 +13,7 @@ public class ComplexCommandFactory {
 
     public ComplexCommand prostokat(Job2dDriver driver) {
 
-
-    List<DriverCommand> list = new ArrayList<>();
+        List<DriverCommand> list = new ArrayList<>();
 
 		list.add(new SetPositionCommand(driver,100,100));
         list.add(new OperateToCommand(driver,-100,100));
