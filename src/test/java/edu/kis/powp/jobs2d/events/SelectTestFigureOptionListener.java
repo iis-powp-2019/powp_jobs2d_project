@@ -1,8 +1,13 @@
 package edu.kis.powp.jobs2d.events;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
+import edu.kis.powp.jobs2d.command.ComplexCommand;
+import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
@@ -18,10 +23,16 @@ public class SelectTestFigureOptionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		OperateToCommand operateToCommand = new OperateToCommand(driverManager.getCurrentDriver());
-		SetPositionCommand setPositionCommand = new SetPositionCommand(driverManager.getCurrentDriver());
-		setPositionCommand.execute(132,123);
-		operateToCommand.execute(50,50);
-		operateToCommand.execute(-100,-145);
+		List<DriverCommand> list = new ArrayList<>();
+
+		list.add(new SetPositionCommand(driverManager.getCurrentDriver(),100,200));
+		list.add(new OperateToCommand(driverManager.getCurrentDriver(),-10,-10));
+		list.add(new OperateToCommand(driverManager.getCurrentDriver(),-200,-100));
+		list.add(new OperateToCommand(driverManager.getCurrentDriver(),130,-150));
+		ComplexCommand complexCommand = new ComplexCommand(list);
+		complexCommand.execute();
+
+
+
 	}
 }

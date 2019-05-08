@@ -4,5 +4,5 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 
 public interface DriverCommand {
 
-    public void execute(int x, int y);
+    public void execute();
 }
