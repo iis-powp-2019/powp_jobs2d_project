@@ -36,10 +36,22 @@ public class TestJobs2dPatterns {
 		SelectTestCommandListener commandTest = new SelectTestCommandListener(
 				DriverFeature.getDriverManager());
 
+		SelectCommandSquareListener fabricSquareCommand = new SelectCommandSquareListener(
+				DriverFeature.getDriverManager());
+
+		SelectCommandTriangleListener fabricTriangleCommand = new SelectCommandTriangleListener(
+				DriverFeature.getDriverManager());
+
+		SelectCommandTrapezeListener fabricTrapezeCommand = new SelectCommandTrapezeListener(
+				DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestFigure3OptionListener);
 		application.addTest("Command test", commandTest);
+		application.addTest("Command Square", fabricSquareCommand);
+		application.addTest("Command Triangle", fabricTriangleCommand);
+		application.addTest("Command Trapeze", fabricTrapezeCommand);
 	}
 
 	/**
