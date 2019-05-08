@@ -20,7 +20,7 @@ public class FiguresJaneDriver extends AbstractDriver{
 		line.setStartCoordinates(this.getX(), this.getY());
 		line.setEndCoordinates(_x, _y);
 		this.setPosition(_x, _y);
-
+		
 		DrawerFeature.getDrawerController().drawLine(line);
 	}
 
