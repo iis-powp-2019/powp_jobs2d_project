@@ -13,7 +13,6 @@ public class ComplexCommand implements DriverCommand{
 
 	@Override
 	public void execute(Job2dDriver object) {
-		// TODO Auto-generated method stub
 		
 	}
 
