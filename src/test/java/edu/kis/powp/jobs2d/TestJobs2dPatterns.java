@@ -15,6 +15,8 @@ import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestJaneFigureOptionListener;
+import edu.kis.powp.jobs2d.factories.CircleFactory;
+import edu.kis.powp.jobs2d.factories.TriangleFactory;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -35,6 +37,12 @@ public class TestJobs2dPatterns {
 
         SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(
                 DriverFeature.getDriverManager());
+
+        SelectTestFigureOptionListener triangle = new SelectTestFigureOptionListener(DriverFeature.getDriverManager(),
+                CircleFactory.createRectangle(DriverFeature.getDriverManager(), 0, 45));
+        SelectTestFigureOptionListener square = new SelectTestFigureOptionListener(DriverFeature.getDriverManager(),
+                TriangleFactory.createCircle(DriverFeature.getDriverManager()));
+
 
         application.addTest("Figure Joe 1", selectTestFigureOptionListener);
         application.addTest("Figure Joe 2", selectTestFigureOptionListener);
