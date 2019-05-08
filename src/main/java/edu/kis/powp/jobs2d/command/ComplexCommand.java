@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ComplexCommand implements DriverCommand {
-
+//pytanie 3.1.4 odp: kompozyt
     List<DriverCommand>  driverCommandList= new ArrayList<>();
 
     public ComplexCommand(List<DriverCommand> driverCommandList) {

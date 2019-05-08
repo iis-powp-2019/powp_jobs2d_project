@@ -10,6 +10,7 @@ import edu.kis.powp.jobs2d.command.ComplexCommand;
 import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
+import edu.kis.powp.jobs2d.command.factory.ComplexCommandFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
@@ -23,13 +24,9 @@ public class SelectTestFigureOptionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		List<DriverCommand> list = new ArrayList<>();
 
-		list.add(new SetPositionCommand(driverManager.getCurrentDriver(),100,200));
-		list.add(new OperateToCommand(driverManager.getCurrentDriver(),-10,-10));
-		list.add(new OperateToCommand(driverManager.getCurrentDriver(),-200,-100));
-		list.add(new OperateToCommand(driverManager.getCurrentDriver(),130,-150));
-		ComplexCommand complexCommand = new ComplexCommand(list);
+		ComplexCommandFactory complexCommandFactory = new ComplexCommandFactory();
+		ComplexCommand complexCommand = complexCommandFactory.prostokat(driverManager.getCurrentDriver());
 		complexCommand.execute();
 
 
