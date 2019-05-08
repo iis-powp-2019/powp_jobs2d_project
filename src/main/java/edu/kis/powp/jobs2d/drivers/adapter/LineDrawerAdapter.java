@@ -19,6 +19,10 @@ public class LineDrawerAdapter extends DrawerFeature implements Job2dDriver {
 		this.startX = x;
 		this.startY = y;
 	}
+	
+	public String getPosition() {
+		return "x:" + this.startX + ", y:" + this.startY;
+	}
 
 	@Override
 	public void operateTo(int x, int y) {
