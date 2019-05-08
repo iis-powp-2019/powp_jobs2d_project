@@ -14,8 +14,8 @@ public class ComplexCommand implements DriverCommand{
     }
 
     @Override public void execute() {
-        for (DriverCommand item:listOfCommands){
-            item.execute();
+        for (DriverCommand command:listOfCommands){
+            command.execute();
         }
     }
 }
