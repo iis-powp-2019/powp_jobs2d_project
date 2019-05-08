@@ -15,6 +15,7 @@ public class SetPositionCommand implements DriverCommand {
 
     @Override
     public void execute() {
-        job2dDriver.operateTo(x, y);
+        job2dDriver.setPosition(x, y);
     }
 }
+// zadanie 4 kompozycja. agregacja i dziedziczenie
