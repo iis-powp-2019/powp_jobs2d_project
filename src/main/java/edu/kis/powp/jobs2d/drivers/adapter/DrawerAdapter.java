@@ -45,7 +45,6 @@ public class DrawerAdapter implements Job2dDriver {
 
 		drawerFeature.getDrawerController().drawLine(line);
 		setPosition(x,y);
-
 	}
 
 	@Override
