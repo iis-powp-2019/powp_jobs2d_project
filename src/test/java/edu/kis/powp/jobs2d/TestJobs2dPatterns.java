@@ -27,14 +27,14 @@ public class TestJobs2dPatterns {
 	private static void setupPresetTests(Application application) {
 	    /* TODO: somehow inject preset scripts without having need to keep them imported in this class */
 		SelectTestFigureOptionListener selectTestFigureOptionListener1 = new SelectTestFigureOptionListener(
-				DriverFeature.getDriverManager(), FiguresJoe::figureScript1);
+				DriverFeature.getDriverManager(), "rectangle");
 
 		SelectTestFigureOptionListener selectTestFigureOptionListener2 = new SelectTestFigureOptionListener(
-		        DriverFeature.getDriverManager(), FiguresJoe::figureScript2);
+		        DriverFeature.getDriverManager(), "circle");
 
 
-		application.addTest("Figure Joe 1", selectTestFigureOptionListener1);
-		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+		application.addTest("Rectangle", selectTestFigureOptionListener1);
+		application.addTest("Circle", selectTestFigureOptionListener2);
 	}
 
 	/**

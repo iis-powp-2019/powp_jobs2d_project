@@ -13,7 +13,7 @@ public class ComplexCommand implements DriverCommand {
     }
 
     public ComplexCommand(DriverCommand... commands) {
-        this.commandList = Arrays.asList(commands);
+        this(Arrays.asList(commands));
     }
 
     @Override

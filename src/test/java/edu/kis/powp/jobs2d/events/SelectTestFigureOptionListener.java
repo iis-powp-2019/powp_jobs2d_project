@@ -8,29 +8,25 @@ import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.command.ComplexCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
+import edu.kis.powp.jobs2d.command.factory.ComplexCommandFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 public class SelectTestFigureOptionListener implements ActionListener {
 
 	private DriverManager driverManager;
-	private Consumer<Job2dDriver> script;
+	private String commandName;
 
-	public SelectTestFigureOptionListener(DriverManager driverManager, Consumer<Job2dDriver> script) {
+	public SelectTestFigureOptionListener(DriverManager driverManager, String commandName) {
 		this.driverManager = driverManager;
-		this.script = script;
+		this.commandName = commandName;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//FiguresJoe.figureScript1(driverManager.getCurrentDriver());
 		//script.accept(driverManager.getCurrentDriver());
-		new ComplexCommand(
-			new SetPositionCommand(-120, -120),
-			new OperateToCommand(120, -120),
-			new OperateToCommand(60, 60),
-			new OperateToCommand(-120, -120)
-		).execute(driverManager.getCurrentDriver());
+		ComplexCommandFactory.getInstance(commandName).execute(driverManager.getCurrentDriver());
 
 	}
 }
