@@ -22,4 +22,17 @@ public class FigureFactory {
 
         return complexCommand;
     }
+
+    public static DriverCommand getRectangleFactory(DriverManager driverManager){
+        ComplexCommand complexCommand = new ComplexCommand();
+
+        complexCommand.addCommand(new SetPositionCommand(driverManager.getCurrentDriver(), 0,0));
+
+        complexCommand.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 200,0));
+        complexCommand.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 200, 50));
+        complexCommand.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 0, 50));
+        complexCommand.addCommand(new OperateToCommand(driverManager.getCurrentDriver(), 0, 0));
+
+        return complexCommand;
+    }
 }

@@ -1,19 +1,19 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
-import edu.kis.powp.jobs2d.drivers.adapter.FigureJaneAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDriverAdapter;
+import edu.kis.powp.jobs2d.drivers.adapter.FigureJaneAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TestJobs2dPatterns {
 
@@ -31,6 +31,7 @@ public class TestJobs2dPatterns {
         application.addTest("Figure Jane", new SelectFigureJaneOptionListener(DriverFeature.getDriverManager()));
         application.addTest("Command", new SelectCommandOptionListener(DriverFeature.getDriverManager()));
         application.addTest("Command Circle", new SelectCircleFigureCommand(DriverFeature.getDriverManager()));
+        application.addTest("Commant Rectangle", new SelectRectangleFigureCommand(DriverFeature.getDriverManager()));
     }
 
     /**
