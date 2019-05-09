@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.BasicLineDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.SpecialLineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.command.factory.CommandFactory;
+import edu.kis.powp.jobs2d.events.SelectOtherFigureListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOption1Listener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOption2Listener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -23,14 +25,22 @@ public class TestJobs2dPatterns {
 	 */
 	private static void setupPresetTests(Application application) {
 
-		SelectTestFigureOption1Listener figure1 = new SelectTestFigureOption1Listener(
-				DriverFeature.getDriverManager());
+		SelectTestFigureOption1Listener figure1 = new SelectTestFigureOption1Listener(DriverFeature.getDriverManager());
 
-		SelectTestFigureOption2Listener figure2 = new SelectTestFigureOption2Listener(
-				DriverFeature.getDriverManager());
+		SelectTestFigureOption2Listener figure2 = new SelectTestFigureOption2Listener(DriverFeature.getDriverManager());
+
+		SelectOtherFigureListener figure3 = new SelectOtherFigureListener(CommandFactory.getTriangle(DriverFeature.getDriverManager().getCurrentDriver()));
+
+		SelectOtherFigureListener figure4 = new SelectOtherFigureListener(CommandFactory.getRectangle(DriverFeature.getDriverManager().getCurrentDriver()));
+
+		SelectOtherFigureListener figure5 = new SelectOtherFigureListener(CommandFactory.getFrog(DriverFeature.getDriverManager().getCurrentDriver()));
+
 
 		application.addTest("Figure Joe 1", figure1);
 		application.addTest("Figure Joe 2", figure2);
+		application.addTest("Triangle", figure3);
+		application.addTest("Rectangle", figure4);
+		application.addTest("Frog", figure5);
 	}
 
 	/**

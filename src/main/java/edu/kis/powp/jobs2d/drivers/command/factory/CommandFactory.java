@@ -8,19 +8,6 @@ import edu.kis.powp.jobs2d.drivers.command.SetPositionCommand;
 
 public class CommandFactory {
 
-    public static DriverCommand getTriangle(Job2dDriver driver){
-
-        ComplexCommand commands = new ComplexCommand();
-
-        commands.addCommand(new SetPositionCommand(0, 0, driver));
-        commands.addCommand(new OperateToCommand(10, 0, driver));
-        commands.addCommand(new OperateToCommand(5, 10, driver));
-        commands.addCommand(new OperateToCommand(0, 0, driver));
-
-        return commands;
-
-    }
-
     public static DriverCommand getRectangle(Job2dDriver driver){
 
         ComplexCommand commands = new ComplexCommand();
@@ -91,6 +78,19 @@ public class CommandFactory {
 
         commands.addCommand(new SetPositionCommand(50, -20, driver));
         commands.addCommand(new OperateToCommand(30, -20, driver));
+
+        return commands;
+
+    }
+
+    public static DriverCommand getTriangle(Job2dDriver driver){
+
+        ComplexCommand commands = new ComplexCommand();
+
+        commands.addCommand(new SetPositionCommand(0, 0, driver));
+        commands.addCommand(new OperateToCommand(10, 0, driver));
+        commands.addCommand(new OperateToCommand(5, 10, driver));
+        commands.addCommand(new OperateToCommand(0, 0, driver));
 
         return commands;
 
