@@ -6,11 +6,13 @@ public class OperateToCommand implements DriverCommand
 {
 	private int x;
 	private int y;
+	private Job2dDriver driver;
 	
-	public OperateToCommand(int x, int y) 
+	public OperateToCommand(int x, int y, Job2dDriver driver) 
 	{
 		this.x = x;
 		this.y = y;
+		this.driver = driver;
 	}
 
 	public int getX() {
@@ -31,8 +33,6 @@ public class OperateToCommand implements DriverCommand
 
 	@Override
 	public void execute() {
-        DriverManager driverManager = new DriverManager();
-        Job2dDriver job2dDriver = driverManager.getCurrentDriver();
-        job2dDriver.operateTo(x, y);
+		driver.operateTo(x, y);
 	}
 }
