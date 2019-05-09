@@ -12,10 +12,7 @@ import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.command.OpareteToCommand;
-import edu.kis.powp.jobs2d.events.JaneFigure;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.TestFigure2;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -40,6 +37,20 @@ public class TestJobs2dPatterns {
 		JaneFigure testFigure3=new JaneFigure(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Jane", testFigure3);
+
+		CommandTest  commandTest = new CommandTest(DriverFeature.getDriverManager());
+
+		Square square = new Square(DriverFeature.getDriverManager());
+
+		Traingle triangle = new Traingle(DriverFeature.getDriverManager());
+
+		Circle circle = new Circle(DriverFeature.getDriverManager());
+
+
+		application.addTest("Command Test", commandTest);
+		application.addTest("Command Square", square);
+		application.addTest("Command Triangle", triangle);
+		application.addTest("Command Circle", circle);
 
 
 	}
