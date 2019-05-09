@@ -13,6 +13,11 @@ public class SetPositionCommand implements DriverCommand{
         this.driver = driver;
     }
 
+    public SetPositionCommand(Integer x, Integer y) {
+        this.x = x;
+        this.y = y;
+    }
+
     SetPositionCommand(Job2dDriver driver)
     {
         this.driver = driver;
@@ -21,6 +26,10 @@ public class SetPositionCommand implements DriverCommand{
     public void setCoordinates(int x, int y){
         this.x = x;
         this.y = y;
+    }
+
+    public void setDriver(Job2dDriver driver) {
+        this.driver = driver;
     }
 
     @Override

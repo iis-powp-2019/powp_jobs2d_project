@@ -7,8 +7,9 @@ public class OperateToCommand implements DriverCommand{
     private Integer y;
     private Job2dDriver driver;
 
-    public OperateToCommand(Job2dDriver driver){
-        this.driver = driver;
+    public OperateToCommand(Integer x, Integer y) {
+        this.x = x;
+        this.y = y;
     }
 
     public OperateToCommand(Integer x, Integer y, Job2dDriver driver) {
@@ -20,6 +21,10 @@ public class OperateToCommand implements DriverCommand{
     public void setCoordinates(int x, int y){
         this.x = x;
         this.y = y;
+    }
+
+    public void setDriver(Job2dDriver driver) {
+        this.driver = driver;
     }
 
     @Override

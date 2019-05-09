@@ -6,6 +6,7 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.command.CommandLogger;
 import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -79,6 +80,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver driverAdapter = new DriverAdapter();
 		DriverFeature.addDriver("Driver adapter", driverAdapter);
+
+//		Job2dDriver commandLoger = new CommandLogger(new LoggerDriver());
+//		DriverFeature.addDriver("Command logger", commandLoger);
 
 		DriverFeature.updateDriverInfo();
 	}

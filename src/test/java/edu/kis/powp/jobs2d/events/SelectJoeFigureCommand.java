@@ -1,8 +1,7 @@
 package edu.kis.powp.jobs2d.events;
 
 import edu.kis.powp.jobs2d.drivers.DriverManager;
-import edu.kis.powp.jobs2d.drivers.command.ComplexCommand;
-import edu.kis.powp.jobs2d.drivers.command.JoeFiguresCommand;
+import edu.kis.powp.jobs2d.drivers.command.CommandLogger;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 import java.awt.event.ActionEvent;
@@ -17,9 +16,9 @@ public class SelectJoeFigureCommand implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        new ComplexCommand()
-                .addCommand(new JoeFiguresCommand(driverManager).selectScript(JoeFiguresCommand.JoeScripts.SCRIPT1))
-                .addCommand(new JoeFiguresCommand(driverManager).selectScript(JoeFiguresCommand.JoeScripts.SCRIPT2))
-                .execute();
+        CommandLogger logger = CommandLogger.getInstance();
+        logger.setDriver(driverManager.getCurrentDriver());
+        FiguresJoe.figureScript1(logger);
+        logger.getComplexCommand().execute();
     }
 }
