@@ -6,7 +6,7 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 /**
  * Plotter test.
  * 
- * @author Dominik
+ * @author
  */
 public class Job2dDriverTest {
 	private static Job2dDriver driver = new StubDriver();

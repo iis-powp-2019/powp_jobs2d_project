@@ -7,8 +7,18 @@ public class ComplexCommand implements DriverCommand
 	private LinkedList<DriverCommand> list;
 	
 	
-	public ComplexCommand(LinkedList<DriverCommand> list) {
-		this.list = list;
+	public ComplexCommand(LinkedList<DriverCommand> list){
+		list = new LinkedList<DriverCommand>();
+		this.list.addAll(list);
+	}
+
+	public ComplexCommand(DriverCommand driverCommand){
+		list = new LinkedList<DriverCommand>();
+		list.add(driverCommand);
+	}
+	
+	public ComplexCommand() {
+		list = new LinkedList<DriverCommand>();
 	}
 
 	@Override
@@ -17,6 +27,10 @@ public class ComplexCommand implements DriverCommand
 		{
 			e.execute();
 		}
+	}
+	
+	public void addCommand(DriverCommand dc){
+		list.add(dc);
 	}
 }
 
