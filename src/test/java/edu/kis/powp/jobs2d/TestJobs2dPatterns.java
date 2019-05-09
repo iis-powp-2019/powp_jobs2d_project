@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.events.Circle;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.Square;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -30,6 +31,7 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListenerSecond);
 		application.addTest("Rectangle", new Square(DriverFeature.getDriverManager()));
+		application.addTest("Circle", new Circle(DriverFeature.getDriverManager()));
 	}
 
 	/**
