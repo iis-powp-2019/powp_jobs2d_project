@@ -3,6 +3,7 @@ package edu.kis.powp.jobs2d.events;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import edu.kis.powp.jobs2d.command.ComplexCommand;
 import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
@@ -19,11 +20,18 @@ public class SelectCommandTestOptionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		DriverCommand driverCommand = new OperateToCommand(new Adapter(), 0, 100);
-		driverCommand.execute();
-		DriverCommand driverCommand2 = new SetPositionCommand(new Adapter(), 0, 100);
-		driverCommand2.execute();
-		DriverCommand driverCommand3 = new OperateToCommand(new Adapter(), 100, 50);
-		driverCommand3.execute();
+		ComplexCommand complex = new ComplexCommand();
+
+        DriverCommand driverCommand1 = new OperateToCommand(driverManager.getCurrentDriver(), 0, 100);
+        DriverCommand driverCommand2 = new OperateToCommand(driverManager.getCurrentDriver(), 100, 100);
+        DriverCommand driverCommand3 = new OperateToCommand(driverManager.getCurrentDriver(), 100, 0);
+        DriverCommand driverCommand4 = new OperateToCommand(driverManager.getCurrentDriver(), 0, 0);
+
+        complex.addCommand(driverCommand1);
+        complex.addCommand(driverCommand2);
+        complex.addCommand(driverCommand3);
+        complex.addCommand(driverCommand4);
+
+        complex.execute();
 	}
 }
