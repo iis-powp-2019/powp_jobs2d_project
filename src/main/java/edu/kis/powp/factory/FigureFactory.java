@@ -24,6 +24,13 @@ public class FigureFactory {
             commandList.add(new OperateToCommand(driverManager.getCurrentDriver(), 0, 0));
 
             return new ComplexCommand(commandList);
+        } else if (figureType == "triangle") {
+            commandList.add(new SetPositionCommand(driverManager.getCurrentDriver(), 0, 0));
+            commandList.add(new OperateToCommand(driverManager.getCurrentDriver(), -75, 0));
+            commandList.add(new OperateToCommand(driverManager.getCurrentDriver(), -75, -150));
+            commandList.add(new OperateToCommand(driverManager.getCurrentDriver(), 0, 0));
+
+            return new ComplexCommand(commandList);
         } else return new ComplexCommand(Collections.emptyList());
     }
 }
