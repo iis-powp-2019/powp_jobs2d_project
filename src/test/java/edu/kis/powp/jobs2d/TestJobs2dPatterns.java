@@ -40,6 +40,8 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 1", selectFirstFigureOptionListener);
 		application.addTest("Figure Joe 2", selectSecondFigureOptionListener);
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
+		application.addTest("Rectangle", selectTestRectangleOptionListener);
+		application.addTest("Square", selectTestSquareOptionListener);
 	}
 
 	/**
@@ -60,6 +62,8 @@ public class TestJobs2dPatterns {
 
         Job2dDriver abstractDriverAdapter = new AbstractDriverAdapter(DrawerFeature.getDrawerController());
         DriverFeature.addDriver("Jane Figures", abstractDriverAdapter);
+
+
 
 		DriverFeature.updateDriverInfo();
 	}
