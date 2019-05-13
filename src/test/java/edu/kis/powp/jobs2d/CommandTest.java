@@ -16,9 +16,9 @@ public class CommandTest {
 	 * Driver test.
 	 */
 	public static void main(String[] args) {
-		DriverCommand operateToCommand = new OperateToCommand(driver, 2, 2);
+		DriverCommand operateToCommand = new OperateToCommand(2, 2);
 
-		operateToCommand.execute();
+		operateToCommand.execute(driver);
 
 	}
 
