@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ShapeFactory {
 
-    public static DriverCommand getFigure(DriverManager driverManager, String shape) {
+    public static DriverCommand getShape(DriverManager driverManager, String shape) {
 
         List<DriverCommand> commandList = new ArrayList<>();
 
