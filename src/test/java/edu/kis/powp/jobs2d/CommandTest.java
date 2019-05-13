@@ -2,6 +2,7 @@ package edu.kis.powp.jobs2d;
 
 import edu.kis.powp.command.DriverCommand;
 import edu.kis.powp.command.OperateToCommand;
+import edu.kis.powp.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 /**
@@ -20,6 +21,8 @@ public class CommandTest {
 
 		operateToCommand.execute(driver);
 
+		DriverCommand setPositionCommand = new SetPositionCommand(0,0);
+		setPositionCommand.execute(driver);
 	}
 
 	private static class StubDriver implements Job2dDriver {
