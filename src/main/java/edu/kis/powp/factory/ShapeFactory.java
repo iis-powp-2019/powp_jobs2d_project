@@ -18,19 +18,19 @@ public class ShapeFactory {
 
         switch (shape) {
             case "rectangle":
-                commandList.add(new SetPositionCommand(0, 0));
-                commandList.add(new OperateToCommand(150, 0));
-                commandList.add(new OperateToCommand(150, 100));
-                commandList.add(new OperateToCommand(0, 100));
-                commandList.add(new OperateToCommand(0, 0));
+                commandList.add(new SetPositionCommand(driverManager.getCurrentDriver(),0, 0));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),150, 0));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),150, 100));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),0, 100));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),0, 0));
 
                 return new ComplexCommand(commandList);
             case "square":
-                commandList.add(new SetPositionCommand(0, 0));
-                commandList.add(new OperateToCommand(150, 0));
-                commandList.add(new OperateToCommand(150, 150));
-                commandList.add(new OperateToCommand(0, 150));
-                commandList.add(new OperateToCommand(0, 0));
+                commandList.add(new SetPositionCommand(driverManager.getCurrentDriver(),0, 0));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),150, 0));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),150, 150));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),0, 150));
+                commandList.add(new OperateToCommand(driverManager.getCurrentDriver(),0, 0));
 
                 return new ComplexCommand(commandList);
             default:
