@@ -27,9 +27,14 @@ public class AbstractDriverAdapter extends AbstractDriver {
 	 */
 	@Override
 	public void operateTo(int x, int y) {
-		DriverFeature.getDriverManager().getCurrentDriver().setPosition(this.getX(), this.getY());
-		DriverFeature.getDriverManager().getCurrentDriver().operateTo(x, y);
+		ILine line = LineFactory.getBasicLine();
+
+		line.setStartCoordinates(this.getX(), this.getY());
+		line.setEndCoordinates(x, y);
+
 		this.setPosition(x, y);
+
+		DrawerFeature.getDrawerController().drawLine(line);
 	}
 
 	@Override

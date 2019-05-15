@@ -10,11 +10,13 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.line.DottedLine;
 import edu.kis.legacy.drawer.shape.line.SpecialLine;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerToJobs2dAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
+import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener3;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.shapes.lines.UserLine;
@@ -37,6 +39,11 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+
+		SelectTestFigureOptionListener3 selectTestFigureOptionListener3 = new SelectTestFigureOptionListener3(
+				DriverFeature.getDriverManager());
+
+		application.addTest("Figure Jane", selectTestFigureOptionListener3);
 	}
 
 	/**
@@ -60,6 +67,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver specifiedLineDriver = new LineDrawerAdapter(new UserLine(Color.MAGENTA, 2, true));
 		DriverFeature.addDriver("Specified Line Driver", specifiedLineDriver);
+
+		Job2dDriver janeDriver = new AbstractDriverAdapter();
+		DriverFeature.addDriver("Jane Driver", janeDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
