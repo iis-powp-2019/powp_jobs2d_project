@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +17,7 @@ import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+import edu.kis.powp.jobs2d.shapes.lines.UserLine;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -56,6 +57,9 @@ public class TestJobs2dPatterns {
 
 		Job2dDriver specialLineDriver = new LineDrawerAdapter(new SpecialLine());
 		DriverFeature.addDriver("Special Line Driver", specialLineDriver);
+
+		Job2dDriver specifiedLineDriver = new LineDrawerAdapter(new UserLine(Color.MAGENTA, 2, true));
+		DriverFeature.addDriver("Specified Line Driver", specifiedLineDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
