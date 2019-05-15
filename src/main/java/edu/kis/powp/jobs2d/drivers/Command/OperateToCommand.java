@@ -19,6 +19,6 @@ public class OperateToCommand implements DriverCommand{
 
     @Override
     public void execute() {
-        driver.setPosition(this.x,this.y);
+        driver.operateTo(this.x,this.y);
     }
 }
