@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d.drivers.command;
 
-public class SetPositionCommand implements DriverCommand {
+public class OperateToCommand implements DriverCommand {
 
     private int x;
     private int y;
@@ -8,5 +8,4 @@ public class SetPositionCommand implements DriverCommand {
     @Override public void execute() {
 
     }
-
 }
