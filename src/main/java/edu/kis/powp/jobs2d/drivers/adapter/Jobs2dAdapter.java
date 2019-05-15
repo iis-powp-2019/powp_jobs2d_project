@@ -12,6 +12,8 @@ public class Jobs2dAdapter implements Job2dDriver {
 	private int startX = 0, startY = 0;
 	private DrawPanelController drawPanelController;
 
+	public Jobs2dAdapter(){}
+
 	public Jobs2dAdapter(DrawPanelController drawPanelController) {
 		this.drawPanelController = drawPanelController;
 	}
