@@ -12,6 +12,7 @@ import edu.kis.powp.CustomLine;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.command.OperateToCommand;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureJane;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
@@ -111,6 +112,9 @@ public class TestJobs2dPatterns {
                 setupLogger(app);
 
                 app.setVisibility(true);
+
+                OperateToCommand operateToCommand = new OperateToCommand(2,4,new LoggerDriver());
+                operateToCommand.execute();
             }
         });
     }
