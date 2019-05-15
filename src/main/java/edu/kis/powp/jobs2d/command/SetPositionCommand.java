@@ -1,12 +1,21 @@
 package edu.kis.powp.jobs2d.command;
 
+import edu.kis.powp.jobs2d.Job2dDriver;
+
 public class SetPositionCommand implements DriverCommand{
 	
-	int x, y;
+	private int x, y;
+	private Job2dDriver driver;
+	
+	public SetPositionCommand(Job2dDriver driver, int x, int y){
+        this.driver = driver;
+        this.x = x;
+        this.y = y;
+    }
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
+		driver.setPosition(x, y);
 		
 	}
 
