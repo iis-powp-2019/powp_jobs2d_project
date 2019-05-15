@@ -6,6 +6,10 @@ import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.line.AbstractLine;
 
 public class lineParameters extends AbstractLine implements ILine{
+	public void setColor(Color color){	this.color = color;	}
+    public void setThickness(float thickness){	this.thickness = thickness;	}
+    public void setDotted(boolean dotted){	this.dotted = dotted;	}
+    
 	public lineParameters() {
 		super();
 		color = Color.black;
