@@ -15,7 +15,7 @@ public class FigureJaneAdapter extends AbstractDriver {
     @Override
     public void operateTo(int x, int y) {
         ILine line = LineFactory.getBasicLine();
-        line.setStartCoordinates(0, 0);
+        line.setStartCoordinates(this.getX(), this.getY());
         line.setEndCoordinates(x, y);
 
         DrawPanelController drawPanelController = DrawerFeature.getDrawerController();
