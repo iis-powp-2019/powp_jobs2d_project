@@ -3,6 +3,8 @@ package edu.kis.powp.jobs2d;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,6 +14,9 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.command.DriverCommand;
+import edu.kis.powp.jobs2d.drivers.command.OperateToCommand;
+import edu.kis.powp.jobs2d.drivers.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -43,6 +48,25 @@ public class TestJobs2dPatterns {
 			public void actionPerformed(ActionEvent e)
 			{
 				FiguresJane.figureScript(new Job2dDriverAdapter());
+			}
+		});
+		
+		application.addTest("command test", new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				List<DriverCommand> comms = new ArrayList<>();
+				
+				comms.add(new SetPositionCommand(DriverFeature.getDriverManager().getCurrentDriver(), -50, 20));
+				comms.add(new OperateToCommand(DriverFeature.getDriverManager().getCurrentDriver(), 100, 100));
+				comms.add(new OperateToCommand(DriverFeature.getDriverManager().getCurrentDriver(), 20, 100));
+				
+				for(DriverCommand comm : comms)
+				{
+					comm.execute();
+				}
+				
 			}
 		});
 	}
