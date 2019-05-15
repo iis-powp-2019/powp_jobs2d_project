@@ -10,7 +10,7 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.drivers.adapter.lineParameters;
+import edu.kis.powp.jobs2d.drivers.adapter.LineParameters;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -47,17 +47,15 @@ public class TestJobs2dPatterns {
 //		Job2dDriver testDriver = new DrawPanelControllerJob2dDriverAdapter(DrawerFeature.getDrawerController());
 //		DriverFeature.addDriver("Buggy Simulator", testDriver);
 		
-		Job2dDriver dashedDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new lineParameters(LineFactory.getSpecialLine()));
+		Job2dDriver dashedDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new LineParameters(LineFactory.getSpecialLine()));
 		DriverFeature.addDriver("Dashed Line Simulator", dashedDrawerDriver);
 		
-		Job2dDriver dottedDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new lineParameters(LineFactory.getDottedLine()));
+		Job2dDriver dottedDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new LineParameters(LineFactory.getDottedLine()));
 		DriverFeature.addDriver("Dotted Line Simulator", dottedDrawerDriver);
 		
-		Job2dDriver basicDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new lineParameters(LineFactory.getBasicLine()));
+		Job2dDriver basicDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new LineParameters(LineFactory.getBasicLine()));
 		DriverFeature.addDriver("Basic Line Simulator", basicDrawerDriver);
 		
-		
-
 		DriverFeature.updateDriverInfo();
 	}
 
@@ -66,12 +64,12 @@ public class TestJobs2dPatterns {
 	 * 
 	 * @param application Application context.
 	 */
-	private static void setupDefaultDrawerVisibilityManagement(Application application) {
-		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
-		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
-				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
-		defaultDrawerWindow.setVisible(true);
-	}
+//	private static void setupDefaultDrawerVisibilityManagement(Application application) {
+//		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
+//		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
+//				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
+//		defaultDrawerWindow.setVisible(true);
+//	}
 
 	/**
 	 * Setup menu for adjusting logging settings.
