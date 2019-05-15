@@ -14,6 +14,8 @@ public class SetPositionCommand
 	@Override
 	public void execute()
 	{
+		if(driver == null)
+			throw new DriverException();
 		driver.setPosition(x, y);
 	}
 }

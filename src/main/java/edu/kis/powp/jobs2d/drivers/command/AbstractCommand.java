@@ -9,6 +9,12 @@ public abstract class AbstractCommand
 	protected int x;
 	protected int y;
 	
+	@Override
+	public void setDriver(Job2dDriver driver)
+	{
+		this.driver = driver;
+	}
+	
 	public AbstractCommand(Job2dDriver driver, int x, int y)
 	{
 		this.driver = driver;

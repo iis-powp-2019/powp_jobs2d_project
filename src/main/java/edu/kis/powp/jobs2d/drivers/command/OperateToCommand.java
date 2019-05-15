@@ -14,6 +14,8 @@ public class OperateToCommand
 	@Override
 	public void execute()
 	{
+		if(driver == null)
+			throw new DriverException();
 		driver.operateTo(x, y);
 	}
 }

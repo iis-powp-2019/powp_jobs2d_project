@@ -10,9 +10,18 @@ public class ComplexCommand
 {
 	private Queue<DriverCommand> q = new ArrayDeque<>();
 	
+	
+	
 	public void enqueue(DriverCommand next)
 	{
 		q.add(next);
+	}
+	
+	@Override
+	public void setDriver(Job2dDriver driver)
+	{
+		for(DriverCommand comm : q)
+			comm.setDriver(driver);
 	}
 	
 	@Override

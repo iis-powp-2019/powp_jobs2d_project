@@ -6,13 +6,16 @@ import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.command.CommandExtractor;
 import edu.kis.powp.jobs2d.drivers.command.CommandFactory;
+import edu.kis.powp.jobs2d.drivers.command.DriverCommand;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
+import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -47,6 +50,13 @@ public class TestJobs2dPatterns {
 		});
 		application.addTest("Circle", e -> {
 			CommandFactory.getCircleCommand(DriverFeature.getDriverManager().getCurrentDriver(), new Point(0, 0), 50).execute();
+		});
+		
+		application.addTest("Extracted", e -> {
+			CommandExtractor extractor = new CommandExtractor();
+			DriverCommand extractedCommand = extractor.getCommand();
+			extractedCommand.setDriver(DriverFeature.getDriverManager().getCurrentDriver());
+			extractedCommand.execute();
 		});
 	}
 
