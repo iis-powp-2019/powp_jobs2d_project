@@ -4,6 +4,7 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.ILine;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
+import edu.kis.powp.jobs2d.drivers.DriverCommand;
 
 /**
  * driver adapter to drawer with several bugs.
@@ -37,4 +38,5 @@ public class Job2dAdapter implements Job2dDriver {
 	public String toString() {
 		return "Job2dAdapter";
 	}
+
 }
