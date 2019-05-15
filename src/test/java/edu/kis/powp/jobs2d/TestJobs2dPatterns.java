@@ -8,9 +8,12 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.OperateToCommand;
+import edu.kis.powp.jobs2d.drivers.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanel2Job2d;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectCommandTest;
 import edu.kis.powp.jobs2d.events.SelectTestFigureJaneListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -32,8 +35,12 @@ public class TestJobs2dPatterns {
 		SelectTestFigureJaneListener selectTestFigureJaneListener = new SelectTestFigureJaneListener(
 				DriverFeature.getDriverManager());
 
+		SelectCommandTest commandTest = new SelectCommandTest(
+				DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Jane 1", selectTestFigureJaneListener);
+		application.addTest("Command", commandTest);
 	}
 
 	/**
@@ -56,8 +63,8 @@ public class TestJobs2dPatterns {
 		Job2dDriver myDriver2 = new LineDrawerAdapter();
 		((LineDrawerAdapter)myDriver2).setLine(2);
 		DriverFeature.addDriver("Line Specjal", myDriver2);
-		DriverFeature.getDriverManager().setCurrentDriver(myDriver2);
 
+		DriverFeature.getDriverManager().setCurrentDriver(myDriver2);
 		DriverFeature.updateDriverInfo();
 	}
 
