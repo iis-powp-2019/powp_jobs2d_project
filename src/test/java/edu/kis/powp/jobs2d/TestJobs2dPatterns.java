@@ -12,10 +12,7 @@ import edu.kis.powp.jobs2d.drivers.OperateToCommand;
 import edu.kis.powp.jobs2d.drivers.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanel2Job2d;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectCommandTest;
-import edu.kis.powp.jobs2d.events.SelectTestFigureJaneListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -38,9 +35,17 @@ public class TestJobs2dPatterns {
 		SelectCommandTest commandTest = new SelectCommandTest(
 				DriverFeature.getDriverManager());
 
+		SelectRectangle rectangle = new SelectRectangle(
+				DriverFeature.getDriverManager());
+
+		SelectCircle circle = new SelectCircle(
+				DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Jane 1", selectTestFigureJaneListener);
 		application.addTest("Command", commandTest);
+		application.addTest("Prostokąt", rectangle);
+		application.addTest("Koło", circle);
 	}
 
 	/**
