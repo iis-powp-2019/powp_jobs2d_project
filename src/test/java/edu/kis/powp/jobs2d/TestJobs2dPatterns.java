@@ -1,28 +1,23 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.drivers.command.DriverCommand;
-import edu.kis.powp.jobs2d.drivers.command.OperateToCommand;
-import edu.kis.powp.jobs2d.drivers.command.SetPositionCommand;
+import edu.kis.powp.jobs2d.drivers.command.CommandFactory;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectSecondTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 import edu.kis.powp.jobs2d.magicpresets.FiguresJane;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -42,32 +37,16 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", select);
 		
-		application.addTest("Figure Jane 1", new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				FiguresJane.figureScript(new Job2dDriverAdapter());
-			}
-		});
+		application.addTest("Figure Jane 1", e -> FiguresJane.figureScript(new Job2dDriverAdapter()));
 		
-		application.addTest("command test", new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				List<DriverCommand> comms = new ArrayList<>();
-				
-				comms.add(new SetPositionCommand(DriverFeature.getDriverManager().getCurrentDriver(), -50, 20));
-				comms.add(new OperateToCommand(DriverFeature.getDriverManager().getCurrentDriver(), 100, 100));
-				comms.add(new OperateToCommand(DriverFeature.getDriverManager().getCurrentDriver(), 20, 100));
-				
-				for(DriverCommand comm : comms)
-				{
-					comm.execute();
-				}
-				
-			}
+		application.addTest("Rectangle", e -> {
+			CommandFactory.getRectCommands(DriverFeature.getDriverManager().getCurrentDriver(), new Point(0, 0), new Dimension(100, 100)).execute();
+		});
+		application.addTest("Triangle", e -> {
+			CommandFactory.getTriangelCommand(DriverFeature.getDriverManager().getCurrentDriver(), new Point(0, 0), new Dimension(100, 100)).execute();
+		});
+		application.addTest("Circle", e -> {
+			CommandFactory.getCircleCommand(DriverFeature.getDriverManager().getCurrentDriver(), new Point(0, 0), 50).execute();
 		});
 	}
 
