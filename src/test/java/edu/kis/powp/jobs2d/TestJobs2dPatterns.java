@@ -6,6 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.command.DriverCommand;
+import edu.kis.powp.jobs2d.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
@@ -100,6 +102,9 @@ public class TestJobs2dPatterns {
 				setupDrivers(app);
 				setupPresetTests(app);
 				setupLogger(app);
+				
+				SetPositionCommand setPositionCommand = new SetPositionCommand(new LoggerDriver(),5, 5);
+				setPositionCommand.execute();
 
 				app.setVisibility(true);
 			}

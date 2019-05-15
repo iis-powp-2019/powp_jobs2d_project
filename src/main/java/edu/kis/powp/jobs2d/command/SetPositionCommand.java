@@ -18,5 +18,6 @@ public class SetPositionCommand implements DriverCommand{
 		driver.setPosition(x, y);
 		
 	}
+	
 
 }
