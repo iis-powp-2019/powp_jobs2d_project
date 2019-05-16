@@ -36,3 +36,10 @@ public class MyAdapter extends DrawPanelController implements Job2dDriver {
 		return "X = " + startX + " Y = " + startY;
 	}
 }
+
+//Pytanie: Kiedy warto (lub trzeba) korzystać z adaptera klasy (wariant
+//z projektu stażysty)?
+
+//Gdy chcemy dopasować większą funkcjonaloność do małej lub niepasującej.
+//Możemy dopasować interface do wymogów klasy do której chcemy używać
+//nasze klasy.
