@@ -1,0 +1,4 @@
+[Jobs2dDriver]^-.-[MyAdapter],
+[DrawPanelController]^-[MyAdapter],
+[TestJobs2dPatterns]<>-[Jobs2dDriver],
+[TestJobs2dPatterns]<>-[MyAdapter]
