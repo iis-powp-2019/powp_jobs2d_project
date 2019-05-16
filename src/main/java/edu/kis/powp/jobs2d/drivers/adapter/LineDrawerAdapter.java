@@ -8,6 +8,10 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 
 public class LineDrawerAdapter extends DrawPanelControllerAdapter {
 
+    public static final ILine dottedLine = LineFactory.getDottedLine();
+    public static final ILine specialLine = LineFactory.getSpecialLine();
+    public static final ILine basicLine = LineFactory.getBasicLine();
+
     private ILine iLine;
 
     public LineDrawerAdapter(ILine iLine) {
