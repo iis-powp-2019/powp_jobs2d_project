@@ -55,6 +55,11 @@ public class TestJobs2dPatterns {
 		Job2dDriver testSpecialLineDriver = new LineDrawerAdapter(LineFactory.getSpecialLine());
 		DriverFeature.addDriver("Special Line Simulator", testSpecialLineDriver);
 
+		Job2dDriver testSpecialLineDriverEnum = new LineDrawerAdapter(LineDrawerAdapter.dottedLine);
+		DriverFeature.addDriver("Dotted Line Simulator static", testSpecialLineDriverEnum);
+
+
+
 		DriverFeature.updateDriverInfo();
 	}
 
