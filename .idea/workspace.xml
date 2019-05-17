@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b015f230-a6b1-424f-bdbf-7cbf9d3ee71e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectCircle.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectRectangle.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/FactoryCommand.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/DriverCommandExtend.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/CommandTest.java" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/CommandTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java" afterPath="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java" afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,14 +20,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SetPositionCommand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java">
+      <file leaf-file-name="CommandTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/CommandTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state relative-caret-position="504">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
-                <element signature="e#374#375#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,25 +35,23 @@
       <file leaf-file-name="OperateToCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="336">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#588#589#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/CommandTest.java">
+      <file leaf-file-name="FactoryCommand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/FactoryCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="294">
+              <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,9 +59,11 @@
       <file leaf-file-name="ComplexCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="0">
+              <caret line="0" column="36" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,54 +71,9 @@
       <file leaf-file-name="TestJobs2dPatterns.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+            <state relative-caret-position="21">
+              <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectRectangle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectRectangle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#369#370#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#483#484#0" expanded="true" />
-                <element signature="e#549#550#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectCircle.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectCircle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#363#364#0" expanded="true" />
-                <element signature="e#413#414#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LineDrawerAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/LineDrawerAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -159,14 +115,16 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/LineDrawerAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/OperateToCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectCommandTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectRectangle.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectCircle.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/DriverCommandExtend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/CommandTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/FactoryCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java" />
       </list>
     </option>
   </component>
@@ -192,8 +150,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -275,6 +231,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jobs2d" type="462c0819:PsiDirectoryNode" />
+              <item name="drivers" type="462c0819:PsiDirectoryNode" />
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jobs2d" type="b2602c69:ProjectViewProjectNode" />
+              <item name="powp_jobs2d_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jobs2d" type="462c0819:PsiDirectoryNode" />
               <item name="events" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -339,8 +305,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -534,11 +502,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -549,7 +516,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2508056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25832438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -572,31 +539,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/LineDrawerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -604,18 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <marker date="1556108357037" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1556108357037" expanded="false" signature="151:266" ph="..." />
-            <marker date="1556108357037" expanded="true" signature="417:424" ph="{}" />
-            <marker date="1556108357037" expanded="true" signature="470:708" ph="{...}" />
-            <marker date="1556108357037" expanded="false" signature="739:750" ph=" { " />
-            <marker date="1556108357037" expanded="false" signature="824:830" ph=" }" />
-            <marker date="1556108357037" expanded="true" signature="873:995" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1030:1146" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1185:1408" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1439:1523" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -637,8 +571,8 @@
           <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -647,18 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1556108357037" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1556108357037" expanded="false" signature="151:266" ph="..." />
-            <marker date="1556108357037" expanded="true" signature="417:424" ph="{}" />
-            <marker date="1556108357037" expanded="true" signature="470:708" ph="{...}" />
-            <marker date="1556108357037" expanded="false" signature="739:750" ph=" { " />
-            <marker date="1556108357037" expanded="false" signature="824:830" ph=" }" />
-            <marker date="1556108357037" expanded="true" signature="873:995" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1030:1146" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1185:1408" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1439:1523" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,7 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,8 +629,8 @@
           <caret line="18" column="46" lean-forward="false" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -718,18 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <marker date="1556108357037" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1556108357037" expanded="false" signature="151:266" ph="..." />
-            <marker date="1556108357037" expanded="true" signature="417:424" ph="{}" />
-            <marker date="1556108357037" expanded="true" signature="470:708" ph="{...}" />
-            <marker date="1556108357037" expanded="false" signature="739:750" ph=" { " />
-            <marker date="1556108357037" expanded="false" signature="824:830" ph=" }" />
-            <marker date="1556108357037" expanded="true" signature="873:995" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1030:1146" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1185:1408" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1439:1523" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="33" column="38" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,18 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="36" column="32" lean-forward="false" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <marker date="1556108357037" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1556108357037" expanded="false" signature="151:266" ph="..." />
-            <marker date="1556108357037" expanded="true" signature="417:424" ph="{}" />
-            <marker date="1556108357037" expanded="true" signature="470:708" ph="{...}" />
-            <marker date="1556108357037" expanded="false" signature="739:750" ph=" { " />
-            <marker date="1556108357037" expanded="false" signature="824:830" ph=" }" />
-            <marker date="1556108357037" expanded="true" signature="873:995" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1030:1146" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1185:1408" ph="{...}" />
-            <marker date="1556108357037" expanded="true" signature="1439:1523" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -823,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="23" column="52" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,8 +726,8 @@
           <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -855,18 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -882,7 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,7 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -922,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -930,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -938,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -947,18 +821,6 @@
         <state relative-caret-position="231">
           <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -974,9 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -984,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="19" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,18 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/LineDrawerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1026,10 +872,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectCircle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="18" column="48" lean-forward="false" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/DriverCommandExtend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="44" lean-forward="true" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectRectangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
@@ -1040,39 +909,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/events/SelectCircle.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/adapter/LineDrawerAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        <state relative-caret-position="483">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/SetPositionCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="357">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/edu/kis/powp/jobs2d/TestJobs2dPatterns.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="41" column="50" lean-forward="true" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+        <state relative-caret-position="21">
+          <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/ComplexCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="36" lean-forward="true" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/FactoryCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/OperateToCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/CommandTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state relative-caret-position="504">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
