@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,6 +11,9 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DriverToDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
+import edu.kis.powp.jobs2d.drivers.line_decoration.ColorDecoratedLine;
+import edu.kis.powp.jobs2d.drivers.line_decoration.DottedDecoratedLine;
+import edu.kis.powp.jobs2d.drivers.line_decoration.ThicknessDecoratedLine;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -58,6 +61,16 @@ public class TestJobs2dPatterns {
 		Job2dDriver specialLineDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
 				LineFactory.getSpecialLine());
 		DriverFeature.addDriver("Special Line Driver", specialLineDriver);
+
+		Job2dDriver pinkThickLineDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new ThicknessDecoratedLine(15f,
+						new ColorDecoratedLine(Color.PINK, LineFactory.getBasicLine())));
+		DriverFeature.addDriver("Pink Thick Line Driver", pinkThickLineDriver);
+
+		Job2dDriver brownDottedLineDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(),
+				new ColorDecoratedLine(new Color(139,69,19),
+						new DottedDecoratedLine(true, LineFactory.getBasicLine())));
+		DriverFeature.addDriver("Brown Dotted Line Driver", brownDottedLineDriver);
 
 		DriverFeature.updateDriverInfo();
 	}
