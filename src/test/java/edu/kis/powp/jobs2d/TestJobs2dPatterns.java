@@ -9,6 +9,7 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.Command.ComplexCommandParserDriver;
 import edu.kis.powp.jobs2d.command.Figures.CommandIIS;
 import edu.kis.powp.jobs2d.drivers.adapter.DriverToDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
@@ -43,10 +44,14 @@ public class TestJobs2dPatterns {
 
 
 		SelectTestCommandOptionListener selectTestCommandOptionListener = new SelectTestCommandOptionListener(
-				DriverFeature.getDriverManager(), CommandIIS.getFigure()
-		);
+				DriverFeature.getDriverManager(), CommandIIS.getFigure());
 
 		application.addTest("Command IIS", selectTestCommandOptionListener);
+
+        SelectTestCommandOptionListener selectTestParsedCommandOptionListener = new SelectTestCommandOptionListener(
+                DriverFeature.getDriverManager(), new ComplexCommandParserDriver().parseComplexCommand(FiguresJoe::figureScript1));
+
+        application.addTest("Figure Joe 1 Command-Parsed", selectTestParsedCommandOptionListener);
 	}
 
 	/**
