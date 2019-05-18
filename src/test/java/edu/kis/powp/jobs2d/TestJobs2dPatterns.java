@@ -11,10 +11,7 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerToJob2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureCommandOptionListiner;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -38,6 +35,14 @@ public class TestJobs2dPatterns {
 		SelectTestFigureCommandOptionListiner testCommand=new SelectTestFigureCommandOptionListiner(DriverFeature.getDriverManager());
 
 		application.addTest("Test command", testCommand);
+
+        SelectTestFigureSquare testSquareCommand =new SelectTestFigureSquare(DriverFeature.getDriverManager());
+
+        application.addTest("Test square", testSquareCommand);
+
+        SelectTestFigureCircle testCircleCommand =new SelectTestFigureCircle(DriverFeature.getDriverManager());
+
+        application.addTest("Test circle", testCircleCommand);
 
 
 	}
