@@ -13,15 +13,15 @@ public class ComplexCommand implements DriverCommand {
         return new LinkedList<>(this.commands);
     }
 
-    ComplexCommand() {
+    public ComplexCommand() {
         this.commands = new LinkedList<>();
     }
 
-    ComplexCommand(DriverCommand ... commands) {
+    public ComplexCommand(DriverCommand ... commands) {
         this.commands = new LinkedList<>(Arrays.asList(commands));
     }
 
-    ComplexCommand(List<DriverCommand> commands) {
+    public ComplexCommand(List<DriverCommand> commands) {
         this.commands = commands;
     }
 

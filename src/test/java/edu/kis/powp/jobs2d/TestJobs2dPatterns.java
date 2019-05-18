@@ -9,12 +9,14 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.command.Figures.CommandIIS;
 import edu.kis.powp.jobs2d.drivers.adapter.DriverToDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.line_decoration.ColorDecoratedLine;
 import edu.kis.powp.jobs2d.drivers.line_decoration.DottedDecoratedLine;
 import edu.kis.powp.jobs2d.drivers.line_decoration.ThicknessDecoratedLine;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestCommandOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
@@ -38,6 +40,13 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager(), FiguresJoe::figureScript2);
 
 		application.addTest("Figure Joe 2", selectTestFigureOptionListenerTwo);
+
+
+		SelectTestCommandOptionListener selectTestCommandOptionListener = new SelectTestCommandOptionListener(
+				DriverFeature.getDriverManager(), CommandIIS.getFigure()
+		);
+
+		application.addTest("Command IIS", selectTestCommandOptionListener);
 	}
 
 	/**
