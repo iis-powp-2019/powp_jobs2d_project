@@ -9,11 +9,13 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.commands.CommandFactory;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.AdvancedLineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DottedLineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectTestCommandOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
@@ -44,6 +46,18 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
+		
+		SelectTestCommandOptionListener selectTestCommandOptionListener1 = new SelectTestCommandOptionListener(
+				DriverFeature.getDriverManager(),
+				CommandFactory.getRectangleDrawing());
+		
+		application.addTest("komenda kwadracik", selectTestCommandOptionListener1);
+				
+		SelectTestCommandOptionListener selectTestCommandOptionListener2 = new SelectTestCommandOptionListener(
+				DriverFeature.getDriverManager(),
+				CommandFactory.getTriangleDrawing());
+		
+		application.addTest("komenda trojkacik", selectTestCommandOptionListener2);
 	}
 
 	/**
