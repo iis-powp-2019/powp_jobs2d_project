@@ -20,4 +20,15 @@ public class FigureFactory {
         return new ComplexCommand((ArrayList<DriverCommand>) commandList);
     }
 
+    public static DriverCommand rectangleFactory(DriverManager driverManager){
+        List<DriverCommand> commandList = new ArrayList<>();
+
+        commandList.add(new SetPositionCommand(0,0,driverManager.getCurrentDriver()));
+        commandList.add(new OperateToCommand(100,0,driverManager.getCurrentDriver()));
+        commandList.add(new OperateToCommand(100,60,driverManager.getCurrentDriver()));
+        commandList.add(new OperateToCommand(0,60,driverManager.getCurrentDriver()));
+        commandList.add(new OperateToCommand(0,0,driverManager.getCurrentDriver()));
+        return new ComplexCommand((ArrayList<DriverCommand>) commandList);
+    }
+
 }

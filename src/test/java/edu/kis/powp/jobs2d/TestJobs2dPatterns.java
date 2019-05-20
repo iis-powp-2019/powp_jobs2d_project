@@ -36,10 +36,12 @@ public class TestJobs2dPatterns {
                 DriverFeature.getDriverManager());
 
         SelectTestTriangleOptionListener selectTestTriangleOptionListener = new SelectTestTriangleOptionListener(DriverFeature.getDriverManager());
+        SelectTestRectangleOptionListener selectTestRectangleOptionListener = new SelectTestRectangleOptionListener(DriverFeature.getDriverManager());
         application.addTest("Figure Joe 1", selectTestFigureOptionListener);
         application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
         application.addTest("Figure Joe",selectTestFigureJane);
         application.addTest("Triangle",selectTestTriangleOptionListener);
+        application.addTest("Rectangle",selectTestRectangleOptionListener);
     }
 
     /**
