@@ -32,7 +32,7 @@ public class Jobs2dDriverAdapter extends DrawPanelController implements Job2dDri
 		line.setEndCoordinates(x, y);
 
 		// drawLine(line);
-		DrawerFeature.getDrawerController().drawLine(line);
+		drawPanelController.drawLine(line);
 		this.setPosition(x, y);
 	}
 
