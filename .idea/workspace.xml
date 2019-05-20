@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86d80f58-3634-4e6a-89fd-f214a78308c8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/OperateToCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/SetPositionCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/ComplexCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,8 +73,8 @@
       <file leaf-file-name="SetPositionCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/SetPositionCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#384#385#0" expanded="true" />
@@ -85,11 +84,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DriverCommand.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComplexCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/ComplexCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DriverCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="105">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -108,49 +119,6 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="JAVA/edu.kis.powp.jobs2d" pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/edu.kis.powp.jobs2d">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>edu.kis.powp.jobs2d</OriginalElement>
-              <nodes>
-                <node x="185.0" y="385.0">edu.kis.powp.jobs2d.events</node>
-                <node x="0.0" y="81.0">edu.kis.powp.jobs2d.AbstractDriver</node>
-                <node x="90.5" y="0.0">edu.kis.powp.jobs2d.Job2dDriver</node>
-                <node x="0.0" y="233.0">edu.kis.powp.jobs2d.magicpresets</node>
-                <node x="0.0" y="385.0">edu.kis.powp.jobs2d.drivers</node>
-                <node x="170.0" y="81.0">edu.kis.powp.jobs2d.LoggerDriver</node>
-                <node x="208.0" y="309.0">edu.kis.powp.jobs2d.features</node>
-                <node x="0.0" y="309.0">edu.kis.powp.jobs2d.Job2dDriverTest</node>
-                <node x="0.0" y="157.0">edu.kis.powp.jobs2d.TestJobs2dPatterns</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="edu.kis.powp.jobs2d.LoggerDriver" target="edu.kis.powp.jobs2d.Job2dDriver">
-                  <point x="0.0" y="-15.5" />
-                  <point x="240.0" y="56.0" />
-                  <point x="191.0" y="56.0" />
-                  <point x="33.5" y="15.5" />
-                </edge>
-                <edge source="edu.kis.powp.jobs2d.AbstractDriver" target="edu.kis.powp.jobs2d.Job2dDriver">
-                  <point x="0.0" y="-15.5" />
-                  <point x="75.0" y="56.0" />
-                  <point x="124.0" y="56.0" />
-                  <point x="-33.5" y="15.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="179.0" y="208.0" />
-              <SelectedNodes>
-                <node>edu.kis.powp.jobs2d.events</node>
-              </SelectedNodes>
-              <Categories />
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DriverFeature.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/features/DriverFeature.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,8 +133,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -182,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/OperateToCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/SetPositionCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/ComplexCommand.java" />
       </list>
     </option>
   </component>
@@ -378,7 +347,7 @@
       <option name="presentableId" value="Default" />
       <updated>1557208380422</updated>
       <workItem from="1557208382092" duration="5134000" />
-      <workItem from="1558383317242" duration="689000" />
+      <workItem from="1558383317242" duration="1382000" />
     </task>
     <task id="LOCAL-00001" summary="add test - figureScript2">
       <created>1557213057296</created>
@@ -391,7 +360,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5823000" />
+    <option name="totallyTimeSpent" value="6516000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -407,7 +376,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.33934426" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3295082" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25379092" />
@@ -701,15 +670,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/SetPositionCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -725,10 +689,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/drivers/DriverCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/SetPositionCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#384#385#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/kis/powp/jobs2d/commands/ComplexCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
