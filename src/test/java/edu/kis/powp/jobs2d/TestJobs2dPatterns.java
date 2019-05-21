@@ -39,12 +39,12 @@ public class TestJobs2dPatterns {
 
         application.addTest("Command Test", selectTestFigureOptionListener3);
 
-        SelectTestFigureOptionListener4 triangleFigureListener = new SelectTestFigureOptionListener4(
+        SelectShapeOptionListener triangleFigureListener = new SelectShapeOptionListener(
                 DriverFeature.getDriverManager(), ShapeFactory.getTriangle());
 
         application.addTest("Triangle", triangleFigureListener);
 
-        SelectTestFigureOptionListener4 letterMFigureListener = new SelectTestFigureOptionListener4(
+        SelectShapeOptionListener letterMFigureListener = new SelectShapeOptionListener(
                 DriverFeature.getDriverManager(), ShapeFactory.getletterM());
 
         application.addTest("Letter M", letterMFigureListener);
