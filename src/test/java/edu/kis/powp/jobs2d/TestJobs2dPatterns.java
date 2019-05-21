@@ -11,6 +11,8 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineParameters;
+import edu.kis.powp.jobs2d.events.DrawCircle;
+import edu.kis.powp.jobs2d.events.DrawSquare;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
@@ -49,12 +51,16 @@ public class TestJobs2dPatterns {
 		
 		Job2dDriver dashedDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new LineParameters(LineFactory.getSpecialLine()));
 		DriverFeature.addDriver("Dashed Line Simulator", dashedDrawerDriver);
-		
+				
 		Job2dDriver dottedDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new LineParameters(LineFactory.getDottedLine()));
 		DriverFeature.addDriver("Dotted Line Simulator", dottedDrawerDriver);
 		
 		Job2dDriver basicDrawerDriver = new LineDrawerAdapter(DrawerFeature.getDrawerController(), new LineParameters(LineFactory.getBasicLine()));
 		DriverFeature.addDriver("Basic Line Simulator", basicDrawerDriver);
+		
+		application.addTest("Square", new DrawSquare(DriverFeature.getDriverManager()));
+		
+		application.addTest("Circle", new DrawCircle(DriverFeature.getDriverManager()));
 		
 		DriverFeature.updateDriverInfo();
 	}
