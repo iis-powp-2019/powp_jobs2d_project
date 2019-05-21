@@ -12,11 +12,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectTestFiguresRectangleListener implements ActionListener {
+public class SelectTestFiguresTriangleListener implements ActionListener {
 
     private DriverManager driverManager;
 
-    public SelectTestFiguresRectangleListener(DriverManager driverManager) {
+    public SelectTestFiguresTriangleListener(DriverManager driverManager) {
         this.driverManager = driverManager;
     }
 
@@ -24,7 +24,7 @@ public class SelectTestFiguresRectangleListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         CommandFactory commandFactory = new CommandFactory();
-        ComplexCommand complexCommand = commandFactory.rectangle(driverManager.getCurrentDriver());
+        ComplexCommand complexCommand = commandFactory.triangle(driverManager.getCurrentDriver());
         complexCommand.execute();
 
     }
