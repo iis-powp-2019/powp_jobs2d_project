@@ -8,11 +8,13 @@ import java.util.logging.Logger;
 import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.drivers.FiguresJaneDrawer;
 import edu.kis.powp.jobs2d.drivers.adapter.Jobs2dDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener2;
+import edu.kis.powp.jobs2d.events.SelectTestFiguresJaneOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -31,8 +33,12 @@ public class TestJobs2dPatterns {
 		SelectTestFigureOptionListener2 selectTestFigureOptionListener2 = new SelectTestFigureOptionListener2(
 				DriverFeature.getDriverManager());
 
+		SelectTestFiguresJaneOptionListener selectTestFiguresJaneOptionListener = new SelectTestFiguresJaneOptionListener(
+				DriverFeature.getDriverManager());
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureOptionListener2);
+		application.addTest("Figures Jane", selectTestFiguresJaneOptionListener);
 	}
 
 	/**
@@ -49,8 +55,11 @@ public class TestJobs2dPatterns {
 		DriverFeature.addDriver("Buggy Simulator", testDriver);
 
 		Job2dDriver lineDrawer = new LineDrawerAdapter();
-		DriverFeature.addDriver("Dotted Line", lineDrawer);
+		DriverFeature.addDriver("Azure Dotted Line", lineDrawer);
 		DriverFeature.getDriverManager().setCurrentDriver(lineDrawer);
+
+		Job2dDriver figuresJaneDrawer = new FiguresJaneDrawer(0, 0);
+		DriverFeature.addDriver("Jane Simulator", figuresJaneDrawer);
 
 		DriverFeature.updateDriverInfo();
 	}
