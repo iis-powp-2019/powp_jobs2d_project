@@ -13,8 +13,6 @@ public class ComplexCommand implements DriverCommand {
 
     @Override
     public void execute() {
-        commands.forEach(command -> {
-            command.execute();
-        });
+        commands.forEach(DriverCommand::execute);
     }
 }
