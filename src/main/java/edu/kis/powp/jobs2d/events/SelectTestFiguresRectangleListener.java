@@ -4,7 +4,7 @@ import edu.kis.powp.jobs2d.command.ComplexCommand;
 import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
-import edu.kis.powp.jobs2d.command.factories.RectangleFactory;
+import edu.kis.powp.jobs2d.command.factories.CommandFactory;
 import edu.kis.powp.jobs2d.drivers.DriverManager;
 
 import java.awt.event.ActionEvent;
@@ -29,7 +29,7 @@ public class SelectTestFiguresRectangleListener implements ActionListener {
         list.add(new OperateToCommand(driverManager.getCurrentDriver(),-200,-100));
         list.add(new OperateToCommand(driverManager.getCurrentDriver(),130,-150));
         ComplexCommand complexCommand = new ComplexCommand(list);
-        RectangleFactory complexCommandFactory = new RectangleFactory();
+        CommandFactory complexCommandFactory = new CommandFactory();
         complexCommand = complexCommandFactory.rectangle(driverManager.getCurrentDriver());
         complexCommand.execute();
 
