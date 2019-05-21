@@ -13,13 +13,10 @@ import edu.kis.powp.jobs2d.drivers.adapter.JanePatternAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.Jobs2dDriverToDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.OwnLine;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureJaneListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureTwoOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
-import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
+
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -39,9 +36,16 @@ public class TestJobs2dPatterns {
 		SelectTestFigureJaneListener selectTestFigureJaneOptionListener = new SelectTestFigureJaneListener(
 				DriverFeature.getDriverManager());
 
+		SelectComlexCommandSquare selectComlexCommandSquare = new SelectComlexCommandSquare(DriverFeature.getDriverManager());
+		SelectComplexCommandRectangle selectComplexCommandRectangle = new SelectComplexCommandRectangle(DriverFeature.getDriverManager());
+
+
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
+        application.addTest("Square", selectComlexCommandSquare);
+        application.addTest("Rectangle", selectComplexCommandRectangle);
+
 
 	}
 
