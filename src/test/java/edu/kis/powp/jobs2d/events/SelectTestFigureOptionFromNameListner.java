@@ -10,17 +10,21 @@ public class SelectTestFigureOptionFromNameListner implements ActionListener{
 
 	
 	private DriverManager driverManager;
+	int i;
 	
 
-	public SelectTestFigureOptionFromNameListner(DriverManager driverManager) {
+	public SelectTestFigureOptionFromNameListner(DriverManager driverManager, int i) {
 		this.driverManager = driverManager;
+		this.i=i;
 	}
 
 
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
+		if(i==1)
             FigureFactory.triangleFactory(driverManager.getCurrentDriver()).execute();
+            else
+            FigureFactory.rectangleFactory(driverManager.getCurrentDriver()).execute();
 		
 	}
 
