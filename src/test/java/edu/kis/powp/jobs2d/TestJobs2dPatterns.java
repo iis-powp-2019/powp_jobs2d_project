@@ -8,9 +8,7 @@ import java.util.logging.Logger;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.Job2dAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectCommandTestListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureSecondOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -29,10 +27,19 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 		SelectCommandTestListener selectCommandTestListener = new SelectCommandTestListener(
 				DriverFeature.getDriverManager());
+		SelectDrawingTriangleCommandListener selectDrawingTriangleCommandListener = new SelectDrawingTriangleCommandListener(
+				DriverFeature.getDriverManager());
+		SelectDrawingRectangleCommandListener selectDrawingRectangleCommandListener = new SelectDrawingRectangleCommandListener(
+				DriverFeature.getDriverManager());
+		SelectDrawingSquareCommandListener selectDrawingSquareCommandListener = new SelectDrawingSquareCommandListener(
+				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureSecondOptionListener);
 		application.addTest("Command test", selectCommandTestListener);
+		application.addTest("Drawing Square", selectDrawingSquareCommandListener);
+		application.addTest("Drawing Triangle", selectDrawingTriangleCommandListener);
+		application.addTest("Drawing Rectangle", selectDrawingRectangleCommandListener);
 	}
 
 	/**
