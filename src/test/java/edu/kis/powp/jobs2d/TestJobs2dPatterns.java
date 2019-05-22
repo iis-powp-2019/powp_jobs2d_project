@@ -31,12 +31,14 @@ public class TestJobs2dPatterns {
 		SelectTestJaneFigureOptionListener selectTestJaneFigureOptionListener = new SelectTestJaneFigureOptionListener(DriverFeature.getDriverManager());
 		SelectTestTriangleOptionListener selectTestTriangleOptionListener = new SelectTestTriangleOptionListener(DriverFeature.getDriverManager());
 		SelectTestRectangleOptionListener selectTestRectangleOptionListener = new SelectTestRectangleOptionListener(DriverFeature.getDriverManager());
+		SelectTestTrapeziumOptionListener selectTestTrapeziumOptionListener = new SelectTestTrapeziumOptionListener(DriverFeature.getDriverManager());
 
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestJaneFigureOptionListener);
 		application.addTest("triangle",selectTestTriangleOptionListener);
 		application.addTest("rectangle",selectTestRectangleOptionListener);
+		application.addTest("trapezium",selectTestTrapeziumOptionListener);
 	}
 
 	/**
