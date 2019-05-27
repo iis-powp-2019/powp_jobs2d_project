@@ -12,9 +12,6 @@ import edu.kis.powp.jobs2d.features.DrawerFeature;
 public class DrawPanelControllerAdapter implements Job2dDriver {
 	protected int startX = 0, startY = 0;
 
-	public DrawPanelControllerAdapter() {
-		super();
-	}
 
 	@Override
 	public void setPosition(int x, int y) {
