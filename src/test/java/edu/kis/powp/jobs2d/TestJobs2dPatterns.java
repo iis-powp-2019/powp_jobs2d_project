@@ -3,6 +3,7 @@ package edu.kis.powp.jobs2d;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -10,6 +11,8 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.command.ComplexCommand;
+import edu.kis.powp.jobs2d.command.DriverCommand;
 import edu.kis.powp.jobs2d.command.OperateToCommand;
 import edu.kis.powp.jobs2d.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerAdapter;
@@ -111,8 +114,20 @@ public class TestJobs2dPatterns {
 		operateToCommand = new OperateToCommand(10,10,dottedLineDriver );
 		setPositionCommand.execute();
 		operateToCommand.execute();
-
 	}
+
+	private static void commandDrawTriangle(){
+        Job2dDriver specialLine = new LineDrawerAdapter(LineFactory.getSpecialLine(),DrawerFeature.getDrawerController());
+
+        ArrayList<DriverCommand> commands = new ArrayList<>();
+        commands.add(new SetPositionCommand(150,-150,specialLine));
+        commands.add(new OperateToCommand(-150,150,specialLine));
+        commands.add(new OperateToCommand(-150,-150,specialLine));
+        commands.add(new OperateToCommand(150,-150,specialLine));
+
+        ComplexCommand complexCommand = new ComplexCommand(commands);
+        complexCommand.execute();
+    }
 
 	/**
 	 * Launch the application.
@@ -127,6 +142,7 @@ public class TestJobs2dPatterns {
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);
 				commandTest();
+				commandDrawTriangle();
 				setupPresetTests(app);
 				setupLogger(app);
 
