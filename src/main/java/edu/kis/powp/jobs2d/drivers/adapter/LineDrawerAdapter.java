@@ -6,17 +6,19 @@ import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.jobs2d.Job2dDriver;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 
-public class LineDrawerAdapter extends DrawPanelControllerAdapter {
+public class LineDrawerAdapter implements Job2dDriver{
 
     public static final ILine dottedLine = LineFactory.getDottedLine();
     public static final ILine specialLine = LineFactory.getSpecialLine();
     public static final ILine basicLine = LineFactory.getBasicLine();
 
+
+    protected int startX = 0, startY = 0;
     private ILine iLine;
     private DrawPanelController drawPanelController;
 
     public LineDrawerAdapter(ILine iLine, DrawPanelController drawPanelController) {
-        super(drawPanelController);
+        this.drawPanelController = drawPanelController;
         this.iLine = iLine;
     }
 
@@ -27,5 +29,11 @@ public class LineDrawerAdapter extends DrawPanelControllerAdapter {
 
         drawPanelController.drawLine(iLine);
         setPosition(x,y);
+    }
+
+    @Override
+    public void setPosition(int x, int y) {
+        this.startX = x;
+        this.startY = y;
     }
 }
