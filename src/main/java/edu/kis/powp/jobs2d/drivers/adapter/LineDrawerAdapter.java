@@ -13,6 +13,7 @@ public class LineDrawerAdapter extends DrawPanelControllerAdapter {
     public static final ILine basicLine = LineFactory.getBasicLine();
 
     private ILine iLine;
+    private DrawPanelController drawPanelController;
 
     public LineDrawerAdapter(ILine iLine, DrawPanelController drawPanelController) {
         super(drawPanelController);
@@ -24,7 +25,7 @@ public class LineDrawerAdapter extends DrawPanelControllerAdapter {
         iLine.setStartCoordinates(this.startX, this.startY);
         iLine.setEndCoordinates(x, y);
 
-        DrawerFeature.getDrawerController().drawLine(iLine);
+        drawPanelController.drawLine(iLine);
         setPosition(x,y);
     }
 }
