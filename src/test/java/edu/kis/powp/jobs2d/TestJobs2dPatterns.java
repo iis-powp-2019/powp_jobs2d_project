@@ -10,6 +10,8 @@ import edu.kis.legacy.drawer.panel.DefaultDrawerFrame;
 import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.LineFactory;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.command.OperateToCommand;
+import edu.kis.powp.jobs2d.command.SetPositionCommand;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelControllerAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
@@ -93,6 +95,25 @@ public class TestJobs2dPatterns {
 		application.addComponentMenuElement(Logger.class, "OFF logging", (ActionEvent e) -> logger.setLevel(Level.OFF));
 	}
 
+
+	private static void commandTest(){
+		OperateToCommand operateToCommand;
+		SetPositionCommand setPositionCommand;
+
+		Job2dDriver job2dDriver = new DrawPanelControllerAdapter(DrawerFeature.getDrawerController());
+		setPositionCommand = new SetPositionCommand(-50,-50,job2dDriver);
+		operateToCommand = new OperateToCommand(10,10,job2dDriver);
+		setPositionCommand.execute();
+		operateToCommand.execute();
+
+		Job2dDriver dottedLineDriver = new LineDrawerAdapter(LineFactory.getDottedLine(),DrawerFeature.getDrawerController());
+		setPositionCommand = new SetPositionCommand(150,150, dottedLineDriver );
+		operateToCommand = new OperateToCommand(10,10,dottedLineDriver );
+		setPositionCommand.execute();
+		operateToCommand.execute();
+
+	}
+
 	/**
 	 * Launch the application.
 	 */
@@ -105,6 +126,7 @@ public class TestJobs2dPatterns {
 
 				DriverFeature.setupDriverPlugin(app);
 				setupDrivers(app);
+				commandTest();
 				setupPresetTests(app);
 				setupLogger(app);
 
