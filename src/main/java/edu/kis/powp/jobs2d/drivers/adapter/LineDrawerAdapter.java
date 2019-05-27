@@ -14,7 +14,8 @@ public class LineDrawerAdapter extends DrawPanelControllerAdapter {
 
     private ILine iLine;
 
-    public LineDrawerAdapter(ILine iLine) {
+    public LineDrawerAdapter(ILine iLine, DrawPanelController drawPanelController) {
+        super(drawPanelController);
         this.iLine = iLine;
     }
 
