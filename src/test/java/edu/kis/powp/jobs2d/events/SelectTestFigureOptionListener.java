@@ -18,10 +18,12 @@ public class SelectTestFigureOptionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//new SetPositionCommand(0, 100).execute(driverManager.getCurrentDriver());
-		new OperateToCommand(0, 100).execute(driverManager.getCurrentDriver());
-		new OperateToCommand(100, 200).execute(driverManager.getCurrentDriver());
-		//new OperateToCommand(100, 100).execute(driverManager.getCurrentDriver());
+		OperateToCommand operateToCommand = new OperateToCommand(driverManager.getCurrentDriver());
+		SetPositionCommand setPositionCommand = new SetPositionCommand(driverManager.getCurrentDriver());
+
+		operateToCommand.execute(-200, -100);
+		setPositionCommand.execute(200, 50);
+
 	}
 
 }
