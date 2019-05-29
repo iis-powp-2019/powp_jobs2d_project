@@ -30,6 +30,7 @@ public class MyAdapter extends DrawPanelController implements Job2dDriver {
 
 		setPosition(x, y);
 		DrawerFeature.getDrawerController().drawLine(line);
+		operateTo(x, y);
 
 	}
 
