@@ -11,10 +11,13 @@ public class LineDrawerAdapter implements Job2dDriver {
     private int startX = 0, startY = 0;
     private ILine line;
 
-
     public LineDrawerAdapter(ILine line) {
         super();
         this.line = line;
+    }
+
+    public LineDrawerAdapter(){
+        this.line = LineFactory.getBasicLine();
     }
 
     @Override
@@ -30,5 +33,18 @@ public class LineDrawerAdapter implements Job2dDriver {
         setPosition(x,y);
 
         DrawerFeature.getDrawerController().drawLine(line);
+    }
+
+    @Override
+    public String toString() {
+        return "LineDrawerAdapter";
+    }
+
+    public ILine getLine() {
+        return line;
+    }
+
+    public void setLine(ILine line) {
+        this.line = line;
     }
 }
