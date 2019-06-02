@@ -5,15 +5,17 @@ import java.util.List;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
 public class ComplexCommand implements DriverCommand{
+	
+	List<DriverCommand> commands;
 
-	public void executeAll(Job2dDriver _object, List<DriverCommand> _commands) {
-		for( DriverCommand command : _commands )
-			command.execute(_object);
+	public ComplexCommand(List<DriverCommand> _commands) {
+		this.commands = _commands;
 	}
 
-	@Override
-	public void execute(Job2dDriver object) {
-		
+	public void execute() {
+		if( !commands.isEmpty() )
+			for( DriverCommand command : commands )
+				command.execute();
 	}
 
 }

@@ -13,6 +13,8 @@ import edu.kis.powp.jobs2d.drivers.FiguresJaneDriver;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
 import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
+import edu.kis.powp.jobs2d.events.SelectCustomOptionListener;
+import edu.kis.powp.jobs2d.events.SelectRectangleOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestJaneFiguresOptionListener;
 import edu.kis.powp.jobs2d.events.SelectTestScriptFigure2OptionListener;
@@ -37,10 +39,18 @@ public class TestJobs2dPatterns {
 		
 		SelectTestJaneFiguresOptionListener selectTestFigureJaneOptionListener = new SelectTestJaneFiguresOptionListener(
 				DriverFeature.getDriverManager());
+		
+		SelectRectangleOptionListener selectRectangleOptionListener = new SelectRectangleOptionListener(
+				DriverFeature.getDriverManager());
+		
+		SelectCustomOptionListener selectCustomOptionListener = new SelectCustomOptionListener(
+				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigureScript2OptionListener);
+		application.addTest("Rectangle", selectRectangleOptionListener);
+		application.addTest("Custom", selectCustomOptionListener);
 	}
 
 	/**
