@@ -28,3 +28,4 @@ public class SelectTestFigureOptionNameListener implements ActionListener{
     }
 
 }
+/// Odp na pytanie:  Wzorzec composite
