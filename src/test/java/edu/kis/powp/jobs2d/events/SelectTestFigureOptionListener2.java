@@ -20,3 +20,4 @@ public class SelectTestFigureOptionListener2 implements ActionListener {
     }
 
 }
+
