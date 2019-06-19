@@ -12,8 +12,8 @@ import edu.kis.powp.jobs2d.drivers.SelectDriverMenuOptionListnerForSecoundExampl
 import edu.kis.powp.jobs2d.drivers.adapter.DrawingAdapter;
 
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
+import edu.kis.powp.jobs2d.events.*;
+//import edu.kis.powp.jobs2d.events.SelectCircleFactoryTestOptionListener;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
@@ -32,7 +32,11 @@ public class TestJobs2dPatterns {
 		SelectDriverMenuOptionListnerForSecoundExample selectDriverMenuOptionListnerForSecoundExample2 = new SelectDriverMenuOptionListnerForSecoundExample(DriverFeature.getDriverManager());
 		application.addTest("Figure Joe 2", selectDriverMenuOptionListnerForSecoundExample2);
 
+		SelectRectangleFactoryTestOptionListener selectRectangleFactoryOptionListener = new SelectRectangleFactoryTestOptionListener(DriverFeature.getDriverManager());
+		application.addTest("Rectangle Factory", selectRectangleFactoryOptionListener);
 
+		SelectCircleFactoryTestOptionListener selectCircleFactoryOptionListener = new SelectCircleFactoryTestOptionListener(DriverFeature.getDriverManager());
+		application.addTest("Circle Factory", selectCircleFactoryOptionListener);
 	}
 
 	/**
