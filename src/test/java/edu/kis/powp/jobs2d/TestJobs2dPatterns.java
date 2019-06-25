@@ -10,6 +10,10 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.legacy.drawer.shape.line.DottedLine;
 import edu.kis.legacy.drawer.shape.line.SpecialLine;
 import edu.kis.powp.appbase.Application;
+import edu.kis.powp.jobs2d.command.DriverCommand;
+import edu.kis.powp.jobs2d.command.OperateToCommand;
+import edu.kis.powp.jobs2d.command.SetPositionCommand;
+import edu.kis.powp.jobs2d.drivers.DriverManager;
 import edu.kis.powp.jobs2d.drivers.adapter.AbstractDriverAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawerToJobs2dAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
@@ -44,6 +48,15 @@ public class TestJobs2dPatterns {
 				DriverFeature.getDriverManager());
 
 		application.addTest("Figure Jane", selectTestFigureOptionListener3);
+
+		application.addTest("Test", e->{
+			DriverCommand otc = new OperateToCommand(100, 100);
+			DriverCommand spc = new SetPositionCommand(150, 150);
+
+			otc.execute(DriverFeature.getDriverManager().getCurrentDriver());
+			spc.execute(DriverFeature.getDriverManager().getCurrentDriver());
+			otc.execute(DriverFeature.getDriverManager().getCurrentDriver());
+		});
 	}
 
 	/**
